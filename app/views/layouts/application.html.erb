@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "about", about_path %>
-<%= yield %>
+
+	<%= link_to "Home", root_path %>
+	<%= link_to "About", about_path %>
+	<%= link_to "Sign Up", signup_path %>
+	<%= yield %>
+
+	<% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+	<% end %>
 
 </body>
 </html>
