@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
 
-  resources :users
   resources :errors
   resources :solutions
   resources :tags
