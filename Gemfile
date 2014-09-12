@@ -28,12 +28,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'bcrypt-ruby', '~> 3.1.5'
+# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt-ruby', '~> 3.1.5'
+gem 'devise', '~> 3.3.0'
 
 
 group :test, :development do 
-  gem 'rspec-rails', '~> 3.0.2'
+  gem 'rspec-rails', '~> 2.14.0'
   gem 'factory_girl_rails', '~> 4.4.0'
 end
 
@@ -43,6 +44,7 @@ group :test do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'launchy', '~> 2.4.2'
   gem 'shoulda-matchers', '~> 2.7.0'
+  gem 'selenium-webdriver', '~> 2.43.0'
   gem 'simplecov', :require => false, :group => :test
 end
 # Use unicorn as the app server
