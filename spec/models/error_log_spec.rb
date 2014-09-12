@@ -7,7 +7,7 @@ RSpec.describe ErrorLog, :type => :model do
 
   it "is valid with title, description, OS, OS version, language, language version,
      framework, framework version" do
-     error = ErrorLog.new(
+  		error = ErrorLog.new(
      		title: "test error titiel",
      		description: "test error description",
      		os: "Mac",
@@ -18,7 +18,7 @@ RSpec.describe ErrorLog, :type => :model do
      		framework_version: "4.1.4"
      	)
 
-     expect(error).to be_valid
+     	expect(error).to be_valid
 
   end
   
