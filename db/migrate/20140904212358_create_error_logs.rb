@@ -5,6 +5,11 @@ class CreateErrorLogs < ActiveRecord::Migration
     	t.string :title
     	t.text :description
     	t.string :OS
+    	t.string :os_version
+    	t.string :language
+    	t.string :language_version
+    	t.string :framework
+    	t.string :framework_version
 
       t.timestamps
     end

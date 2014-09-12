@@ -16,20 +16,28 @@ ActiveRecord::Schema.define(version: 20140905020154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "errors", force: true do |t|
+  create_table "errors_logs", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "OS"
+    t.string   "os_version"
+    t.string   "language"
+    t.string   "language_version"
+    t.string   "framework"
+    t.string   "framework_version"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "solutions", force: true do |t|
+    t.text     "description"
+    t.boolean  "worked?"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", force: true do |t|
+    t.string   "tag_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
