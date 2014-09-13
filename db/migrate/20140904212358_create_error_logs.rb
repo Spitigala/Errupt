@@ -9,7 +9,8 @@ class CreateErrorLogs < ActiveRecord::Migration
     	t.string :language
     	t.string :language_version
     	t.string :framework
-    	t.string :framework_version
+      t.string :framework_version
+    	t.boolean :public?, null: false
 
       t.timestamps
     end
