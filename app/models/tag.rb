@@ -3,7 +3,7 @@ class Tag < ActiveRecord::Base
 	validates :tag_name, presence: true
 
 	def self.by_tag(tag)
-		where("tag_name LIKE ?", "#{tag}").first #search by tag
+		where("tag_name LIKE ?", "#{tag}") #search by tag
 	end
 
 end

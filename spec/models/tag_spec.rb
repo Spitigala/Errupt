@@ -10,9 +10,23 @@ RSpec.describe Tag, :type => :model do
   	expect(Tag.new(tag_name: nil)).to have(1).errors_on(:tag_name)
   end
 
-  it "returns an array of tags when by_tag method is called" do 
-  	tag = Tag.create(tag_name: "Ruby")
-  	expect(Tag.by_tag("Ruby").tag_name).to eq "Ruby"
+
+  describe "search by tag name" do
+    before :each do
+      @tag = Tag.create(tag_name: "Ruby")
+    end
+
+    context "tag name search with a match" do
+      it "returns an array of tags when by_tag method is called" do 
+        expect(Tag.by_tag("Ruby")).to eq [@tag]
+      end
+    end
+
+    context "tag name search without a match" do 
+      it "returns no results if a matching tag is not found" do 
+        expect(Tag.by_tag("Javascript")).to_not include @tag
+      end
+    end
   end
 
 end
