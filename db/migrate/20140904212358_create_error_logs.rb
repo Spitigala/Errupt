@@ -1,7 +1,8 @@
 class CreateErrorLogs < ActiveRecord::Migration
   def change
-    create_table :error_logs do |t|
+    create_table :errorlogs do |t|
 
+      t.belongs_to :user
     	t.string :title, null: false
     	t.text :description, null: false
     	t.string :os

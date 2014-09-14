@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :error_logs
+  has_many :errorlogs
 end

@@ -26,9 +26,13 @@ RSpec.describe User, :type => :model do
   end
   
   it "is invalid with a duplicate email" do
-    user1 = create(:user)
+    user1 = create(:user, email: "email2@example.com")
     user2  = build(:user, email: "email2@example.com")
   	expect(user2).to have(2).errors_on(:email)
+  end
+
+  it "has an errorlog entry" do
+    expect(create(:user).errorlogs.count).to eq 1
   end
   
   # it "is invalid with a duplicate username" do 

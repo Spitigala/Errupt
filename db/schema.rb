@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20140905020154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "error_logs", force: true do |t|
+  create_table "errorlogs", force: true do |t|
+    t.integer  "user_id"
     t.string   "title",             null: false
     t.text     "description",       null: false
     t.string   "os"
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140905020154) do
   end
 
   create_table "solutions", force: true do |t|
+    t.integer  "errorlog_id"
     t.text     "description", null: false
     t.boolean  "worked?",     null: false
     t.datetime "created_at"
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140905020154) do
   end
 
   create_table "tags", force: true do |t|
+    t.integer  "errorlog_id"
     t.string   "tag_name"
     t.datetime "created_at"
     t.datetime "updated_at"
