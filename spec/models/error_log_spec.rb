@@ -7,7 +7,7 @@ RSpec.describe ErrorLog, :type => :model do
 
   it "is valid with title, description, OS, OS version, language, language version,
      framework, framework version" do
-     	expect(FactoryGirl.build(:errorlog)).to be_valid
+     	expect(build(:errorlog)).to be_valid
   end
   
   it "is invalid without title" do

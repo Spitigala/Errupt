@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
   it "is valid with a firstname, lastname, username, email and password" do
-  	expect(FactoryGirl.build(:user)).to be_valid
+  	expect(build(:user)).to be_valid
   end
   
   it "is invalid without a firstname" do 
@@ -26,8 +26,8 @@ RSpec.describe User, :type => :model do
   end
   
   it "is invalid with a duplicate email" do
-    user1 = FactoryGirl.create(:user)
-    user2  = FactoryGirl.build(:user, email: "email2@example.com")
+    user1 = create(:user)
+    user2  = build(:user, email: "email2@example.com")
   	expect(user2).to have(2).errors_on(:email)
   end
   
