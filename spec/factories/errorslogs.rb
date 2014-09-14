@@ -2,7 +2,7 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :errorlog do #need to specify class due to 2 word class name
+  factory :errorlog do #need to specify class if using 2 word class name
   	sequence(:title) {|n| "Error #{n}"}
   	description {Faker::Lorem.paragraph}
   	os "OSX"
@@ -14,7 +14,10 @@ FactoryGirl.define do
   	public? true
 
     after(:build) do |errorlog|
-      errorlog.solutions << FactoryGirl.build(:solution, errorlog_id: errorlog.id)
+      2.times do
+      errorlog.solutions << FactoryGirl.build(:solution, errorlog: errorlog)
+      errorlog.tags << FactoryGirl.build(:tag, errorlog: errorlog)
+      end
     end
   end
 end

@@ -18,7 +18,13 @@ RSpec.describe Errorlog, :type => :model do
   	expect(Errorlog.new(description: nil)).to have(1).errors_on(:description)
   end
 
-  it "has a solution" do
-    expect(create(:errorlog).solutions.count).to eq 1
+  describe "Errorlog association tests" do
+    it "has many solutions" do
+      expect(create(:errorlog).solutions.count).to eq 2
+    end
+
+    it "has many tags" do
+      expect(create(:errorlog).tags.count).to eq 2
+    end
   end
 end
