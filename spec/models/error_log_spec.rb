@@ -7,19 +7,7 @@ RSpec.describe ErrorLog, :type => :model do
 
   it "is valid with title, description, OS, OS version, language, language version,
      framework, framework version" do
-  		error = ErrorLog.new(
-     		title: "test error titiel",
-     		description: "test error description",
-     		os: "Mac",
-     		os_version: "1.7.8",
-     		language: "Ruby",
-     		language_version: "2.0",
-     		framework: "rails",
-     		framework_version: "4.1.4"
-     	)
-
-     	expect(error).to be_valid
-
+     	expect(build(:errorlog)).to be_valid
   end
   
   it "is invalid without title" do
