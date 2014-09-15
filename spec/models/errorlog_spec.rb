@@ -23,8 +23,8 @@ RSpec.describe Errorlog, :type => :model do
       expect(create(:errorlog).solutions.count).to eq 2
     end
 
-    it "has many tags" do
-      expect(create(:errorlog).tags.count).to eq 2
+    it "has many error tags" do
+      expect(create(:errorlog).error_tags.count).to eq 2
     end
   end
 end

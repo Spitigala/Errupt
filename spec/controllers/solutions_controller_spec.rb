@@ -9,12 +9,12 @@ describe SolutionsController do
 	end
 
 	describe "POST #create" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "saves the new Solution in the database"
 			it "redirects to errorlog#show page for related error"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not save the new Solution in the database"
 			it "re-renders the :new template"
 		end
@@ -31,12 +31,12 @@ describe SolutionsController do
 	end
 
 	describe "PATCH #update" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "updates the Solution in the database"
 			it "redirects to show"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not update the Solution in the database"
 			it "re-renders the :edit template"
 		end

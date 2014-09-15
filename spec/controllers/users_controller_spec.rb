@@ -8,12 +8,12 @@ describe UsersController do
 	end
 
 	describe "POST #create" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "saves the new User in the database"
 			it "redirects to show"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not save the new User in the database"
 			it "re-renders the :new template"
 		end
@@ -30,12 +30,12 @@ describe UsersController do
 	end
 
 	describe "PATCH #update" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "updates the User in the database"
 			it "redirects to show"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not update the User in the database"
 			it "re-renders the :edit template"
 		end

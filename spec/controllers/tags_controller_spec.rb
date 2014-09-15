@@ -13,12 +13,12 @@ describe TagsController do
 	end
 
 	describe "POST #create" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "saves the new Tag in the database"
 			it "redirects to show"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not save the new Tag in the database"
 			it "re-renders the :new template"
 		end
@@ -35,12 +35,12 @@ describe TagsController do
 	end
 
 	describe "PATCH #update" do
-		conext "with valid attributes" do
+		context "with valid attributes" do
 			it "updates the Tag in the database"
 			it "redirects to show"
 		end
 
-		conext "with invalid attributes" do
+		context "with invalid attributes" do
 			it "does not update the Tag in the database"
 			it "re-renders the :edit template"
 		end
