@@ -4,13 +4,26 @@ describe SolutionsController do
 
 
 	describe "GET #new" do
-		it "assigns a new Solution to @solution"
-		it "renders the :new template"
+		it "assigns a new Solution to @solution" do
+			errorlog = create(:errorlog)
+			get :new, errorlog_id: errorlog.id
+			expect(assigns(:solution)).to be_a_new(Solution)
+		end
+
+		it "renders the :new template" do
+			errorlog = create(:errorlog)
+			get :new, errorlog_id: errorlog.id
+			expect(response).to render_template :new
+		end
 	end
 
 	describe "POST #create" do
 		context "with valid attributes" do
-			it "saves the new Solution in the database"
+			
+			it "saves the new Solution in the database" do
+				
+			end
+			
 			it "redirects to errorlog#show page for related error"
 		end
 

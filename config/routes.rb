@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
 
-  resources :errorlogs
-  resources :solutions
-  resources :tags
+  resources :errorlogs do
+    resources :solutions
+    resources :tags
+  end
 
 
 
