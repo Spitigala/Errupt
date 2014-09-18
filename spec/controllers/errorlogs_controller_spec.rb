@@ -15,19 +15,19 @@ describe ErrorlogsController do
 				get :index
 				expect(response).to render_template :index
 			end
+		end
 
-			describe "GET #show" do
-				it "assigns the requested Errorlog to @errorlog" do
-					errorlog = create(:errorlog)
-					get :show, id: errorlog
-					expect(assigns(:errorlog)).to eq errorlog
-				end
+		describe "GET #show" do
+			it "assigns the requested Errorlog to @errorlog" do
+				errorlog = create(:errorlog)
+				get :show, id: errorlog
+				expect(assigns(:errorlog)).to eq errorlog
+			end
 
-				it "renders the :show template" do 
-					errorlog = create(:errorlog)
-					get :show, id: errorlog
-					expect(response).to render_template :show
-				end
+			it "renders the :show template" do 
+				errorlog = create(:errorlog)
+				get :show, id: errorlog
+				expect(response).to render_template :show
 			end
 		end
 	end
