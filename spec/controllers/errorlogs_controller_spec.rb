@@ -150,6 +150,35 @@ describe ErrorlogsController do
 	end
 
 	describe "guest access" do
+
+		describe "GET #index" do
+			it "populates an array of all public errorlogs" do
+				errorlog1 = create(:errorlog)
+				errorlog2 = create(:errorlog)
+				get :index
+				expect(assigns(:public_errorlogs)).to match_array([errorlog1, errorlog2])
+			end
+
+			it "renders the :index template" do
+				get :index
+				expect(response).to render_template :index
+			end
+		end
+
+		describe "GET #show" do
+			it "assigns the requested Errorlog to @errorlog" do
+				errorlog = create(:errorlog)
+				get :show, id: errorlog
+				expect(assigns(:errorlog)).to eq errorlog
+			end
+
+			it "renders the :show template" do 
+				errorlog = create(:errorlog)
+				get :show, id: errorlog
+				expect(response).to render_template :show
+			end
+		end
+
 		describe "GET #new" do
 			it "requires user to login" do
 				get :new

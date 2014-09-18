@@ -9,11 +9,7 @@ class ErrorlogsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-      @errorlog = Errorlog.new
-    else
-      redirect_to new_user_session_path
-    end
+    @errorlog = Errorlog.new
   end
 
   def create
