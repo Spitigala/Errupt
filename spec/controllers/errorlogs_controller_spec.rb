@@ -34,17 +34,7 @@ describe ErrorlogsController do
 # user access - logged in
  	describe "user access" do
 
-		shared_examples("public access to errorlogs") do
-			describe "GET #index" do
-				it "populates an array of all public errorlogs"
-				it "renders the :index template"
-			end
-
-			describe "GET #show" do
-				it "assigns the requested Errorlog to @errorlog" 
-				it "renders the :show template"
-			end
-		end
+ 		it_behaves_like("public access to errorlogs")
 
 		before :each do
 			allow_message_expectations_on_nil
@@ -167,24 +157,7 @@ describe ErrorlogsController do
 # guest access - not logged in
 	describe "guest access" do
 
-		shared_examples("public access to errorlogs") do
-			describe "GET #index" do
-				it "populates an array of all public errorlogs"
-				it "renders the :index template"
-			end
-
-			describe "GET #show" do
-				it "assigns the requested Errorlog to @errorlog"
-				it "renders the :show template"
-			end
-		end
-
-		describe "GET #new" do
-			it "requires user to login" do
-				get :new
-				expect(response).to redirect_to new_user_session_url
-			end
-		end
+		it_behaves_like("public access to errorlogs")
 
 		describe "GET #edit" do
 			it "requires user to login" do
