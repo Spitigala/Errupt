@@ -1,8 +1,6 @@
 require 'rails_helper'
-include Devise::TestHelpers
 
 describe ErrorlogsController do
-
 	describe "user access" do
 		before :each do
 			allow_message_expectations_on_nil
@@ -38,7 +36,6 @@ describe ErrorlogsController do
 		end
 
 		describe "POST #create" do
-
 			context "with valid attributes" do
 				it "saves the new Errorlog in the database" do
 					expect{
@@ -95,7 +92,6 @@ describe ErrorlogsController do
 		end
 
 		describe "PATCH #update" do
-
 			before :each do
 				@errorlog = create(:errorlog, title: "Test error for update")
 			end
@@ -136,7 +132,6 @@ describe ErrorlogsController do
 		end
 
 		describe "DELETE #destroy" do
-
 			before :each do
 				@errorlog = create(:errorlog)
 			end
@@ -151,9 +146,45 @@ describe ErrorlogsController do
 				delete :destroy, id: @errorlog
 				expect(response).to redirect_to errorlogs_url
 			end
+		end
+	end
 
+	describe "guest access" do
+		describe "GET #new" do
+			it "requires user to login" do
+				get :new
+				expect(response).to redirect_to new_user_session_url
+			end
 		end
 
+		describe "GET #edit" do
+			it "requires user to login" do
+				errorlog = create(:errorlog)
+				get :edit, id: errorlog
+				expect(response).to redirect_to new_user_session_url
+			end
+		end
+
+		describe "POST #create" do
+			it "requires user to login" do
+				post :create, attributes_for(:errorlog)
+				expect(response).to redirect_to new_user_session_url
+			end
+		end
+
+		describe "PUT #update" do
+			it "requires user to login" do
+				put :update, id: create(:errorlog),
+					errorlog: attributes_for(:errorlog)
+				expect(response).to redirect_to new_user_session_url
+			end
+		end
+
+		describe "DELETE #destroy" do
+			it "requires user to login" do
+				delete :destroy, id: create(:errorlog)
+				expect(response).to redirect_to new_user_session_url
+			end
+		end
 	end
-	
 end
