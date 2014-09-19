@@ -1,11 +1,11 @@
 module SignupMacros
-	def sign_up_user
+	def sign_up_user(user)
 		visit root_path
 		click_link 'sign up'
-		fill_in "Firstname",             :with => "john"
-		fill_in "Lastname",              :with => "doe"
-		fill_in "Username",              :with => "johndoe"
-		fill_in "Email",                 :with => "jd@example.com"
+		fill_in "Firstname",             :with => user.firstname
+		fill_in "Lastname",              :with => user.lastname
+		fill_in "Username",              :with => user.username
+		fill_in "Email",                 :with => user.email
 		fill_in "Password",              :with => "password"
 		fill_in "Password confirmation", :with => "password"
 

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 feature "user registration" do
-  scenario "registers a new user" do
-  	sign_up_user
+  scenario "registers a new user", js: true do
+  	user = build(:user)
+  	sign_up_user user
     page.should have_content("Welcome! You have signed up successfully.")
   end
 
