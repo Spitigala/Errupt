@@ -38,7 +38,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, :type => :controller
 
-  config.include LoginMacros, :type => :feature
+  config.include SignupMacros, :type => :feature
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
