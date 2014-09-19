@@ -1,19 +1,18 @@
-require 'spec_helper'
+require 'rails_helper'
 
-feature 'user management'do
-	background do
-		# setup details
-	end
+describe "user registration" do
+  it "allows new users to register with an email address and password" do
+    visit root_path
+    click_link 'sign up'
+    fill_in "Firstname",                 :with => "john"
+    fill_in "Lastname",                 :with => "doe"
+    fill_in "Username",                 :with => "johndoe"
+    fill_in "Email",                 :with => "alindeman@example.com"
+    fill_in "Password",              :with => "password"
+    fill_in "Password confirmation", :with => "password"
 
-	scenario 'adds a new user' do
-		user = create(:user)
-		# sign_in user
+    click_button "Sign up"
 
-		visit root_path
-		# expect{
-			click_link 'sign_up'
-			fill_in 'Email', with: 'test@example.com'
-			find('password').fill_in 'Password', with: 'testpassword'
-		# }
-	end
+    page.should have_content("Welcome! You have signed up successfully.")
+  end
 end
