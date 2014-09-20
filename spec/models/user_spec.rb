@@ -35,19 +35,9 @@ RSpec.describe User, :type => :model do
     expect(create(:user).errorlogs.count).to eq 1
   end
   
-  # it "is invalid with a duplicate username" do 
-  # 	User.create(
-  # 			firstname: "Joe", lastname: "Tester",
-  # 			username: "testusertwo", email: "tester3@example.com",
-  # 			password: "testpw"
-  # 		)
-
-  # 	user = User.new(
-  # 		firstname: "Mike", lastname: "Tester",
-  # 		username: "testusertwo", email: "tester4@example.com",
-  # 		password: "testpw"
-  # 		)
-
-  # 	expect(user).to have(1).errors_on(:username)
-  # end
+  it "is invalid with a duplicate username" do 
+    user1 = create(:user, username: "testname")
+    user2 = build(:user, username: "testname")
+  	expect(user2).to have(1).errors_on(:username)
+  end
 end

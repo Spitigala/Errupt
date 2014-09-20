@@ -27,7 +27,19 @@ class SolutionsController < ApplicationController
 
 	def update
 		@solution = Solution.find(params[:id])
-		redirect_to errorlog_solution_path(@errorlog, params[:id])
+		if @solution.update(solution_params)
+			flash[:success] = "Solution successfully updated!"
+			redirect_to errorlog_solution_path(@errorlog, @solution)
+		else
+			flash.now.alert = "There was an error with updating this Solution."
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@solution = Solution.find(params[:id])
+		@solution.delete
+		redirect_to errorlog_path
 	end
 
 	private
