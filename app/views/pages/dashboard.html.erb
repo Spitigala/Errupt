@@ -1,1 +1,10 @@
-<p>Dashboard for <%= current_user.firstname %></p>
+<p><%= current_user.firstname.capitalize %>'s Dashboard</p>
+
+<div>
+	<h3>Your Error Logs</h3>
+	<% current_user.errorlogs.each do |errorlog|%>
+		<%= errorlog.title %>
+	<% end %>
+</div>
+
+<%= link_to "Create new Error Log", new_errorlog_path %>

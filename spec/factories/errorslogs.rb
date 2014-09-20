@@ -11,7 +11,7 @@ FactoryGirl.define do
   	language_version "1.9.1"
   	framework "Rails"
   	framework_version "4.1.4"
-  	public? true
+  	public true
 
     after(:build) do |errorlog|
       2.times do

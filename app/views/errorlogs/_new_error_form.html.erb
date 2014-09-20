@@ -1,0 +1,33 @@
+<h2>New error</h2>
+
+<%= form_for @errorlog do |f| %>
+
+  <div><%= f.label :title %><br />
+  <%= f.text_field :title, autofocus: true %></div>
+
+  <div><%= f.label :description %><br />
+  <%= f.text_field :description, autofocus: true %></div>
+
+  <div><%= f.label :os %><br />
+  <%= f.text_field :os, autofocus: true %></div>
+
+  <div><%= f.label :OS_Version %><br />
+  <%= f.text_field :os_version, autofocus: true %></div>
+
+  <div><%= f.label :language %><br />
+  <%= f.text_field :language, autofocus: true %></div>  
+
+  <div><%= f.label :language_version %><br />
+  <%= f.text_field :language_version, autofocus: true %></div>
+
+  <div><%= f.label :framework %><br />
+  <%= f.text_field :framework, autofocus: true %></div>  
+
+  <div><%= f.label :framework_version %><br />
+  <%= f.text_field :framework_version, autofocus: true %></div>
+
+  <div><%= f.label :public %><br />
+  <%= f.text_field :public, autofocus: true %></div>
+
+  <div><%= f.submit "Create Log" %></div>
+<% end %>

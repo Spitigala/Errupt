@@ -1,7 +1,7 @@
 class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
- 		@public_errorlogs = Errorlog.where(public?: true)
+ 		@public_errorlogs = Errorlog.where(public: true)
   end
 
   def show
@@ -13,7 +13,7 @@ class ErrorlogsController < ApplicationController
   end
 
   def create
-  	@errorlog = Errorlog.new(errorlog_params)
+  	@errorlog = current_user.errorlogs.build(errorlog_params)
 
   	if @errorlog.save
   		flash[:success] = "Error Log was created!"

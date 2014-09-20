@@ -25,15 +25,15 @@ ActiveRecord::Schema.define(version: 20140914142853) do
 
   create_table "errorlogs", force: true do |t|
     t.integer  "user_id"
-    t.string   "title",             null: false
-    t.text     "description",       null: false
+    t.string   "title",                            null: false
+    t.text     "description",                      null: false
     t.string   "os"
     t.string   "os_version"
     t.string   "language"
     t.string   "language_version"
     t.string   "framework"
     t.string   "framework_version"
-    t.boolean  "public?",           null: false
+    t.boolean  "public",            default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
