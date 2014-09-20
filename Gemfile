@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'devise', '~> 3.3.0'
+gem 'paperclip', '~> 4.2.0'
 
 
 group :test, :development do 
