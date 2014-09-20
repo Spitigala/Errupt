@@ -10,10 +10,9 @@ describe ErrorlogsController do
 	shared_examples("public access to errorlogs") do
 		describe "GET #index" do
 			it "populates an array of all public errorlogs" do
-				errorlog1 = errorlog
 				errorlog2 = create(:errorlog)
 				get :index
-				expect(assigns(:public_errorlogs)).to match_array([errorlog1, errorlog2])
+				expect(assigns(:public_errorlogs)).to match_array([errorlog, errorlog2])
 			end
 
 			it "renders the :index template" do
