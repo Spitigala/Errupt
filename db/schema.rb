@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140914142853) do
 
   create_table "errorlogs", force: true do |t|
     t.integer  "user_id"
-    t.integer  "ErrorTag_id"
     t.string   "title",             null: false
     t.text     "description",       null: false
     t.string   "os"
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 20140914142853) do
   end
 
   create_table "tags", force: true do |t|
-    t.integer  "ErrorTag_id"
     t.string   "tag_name"
     t.datetime "created_at"
     t.datetime "updated_at"
