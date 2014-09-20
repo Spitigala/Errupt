@@ -37,6 +37,7 @@ gem 'paperclip', '~> 4.2.0'
 group :test, :development do 
   gem 'rspec-rails', '~> 2.14.0'
   gem 'factory_girl_rails', '~> 4.4.0'
+  gem 'shoulda', '~> 3.5.0'
 end
 
 group :test do
