@@ -68,7 +68,7 @@ describe TagsController do
 	end
 
 	describe "PATCH #update" do
-		# Don't allow tags to be edited. only create and delete?
+		# Don't allow tags to be updated. only create and delete?
 	end
 
 	describe "DELETE #destroy" do
