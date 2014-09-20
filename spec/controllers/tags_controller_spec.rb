@@ -19,8 +19,7 @@ describe TagsController do
 	end
 
 	describe "GET #index" do
-		# it "populates an array of all tags"
-		# it "renders the :index template"
+		# don't show list of all tags, only tags for a related error
 	end
 
 	describe "GET #new" do
@@ -62,27 +61,14 @@ describe TagsController do
 
 	describe "GET #show" do
 		# don't show individual tags, only a list of tags for a related error?
-		# it "assigns the requested Tag to @tag"
-		# it "renders the :show template"
 	end
 
 	describe "GET #edit" do
 		# Don't allow tags to be edited. only create and delete?
-		# it "assigns the requested Tag to tag"
-		# it "renders the :edit template"
 	end
 
 	describe "PATCH #update" do
 		# Don't allow tags to be edited. only create and delete?
-		# context "with valid attributes" do
-		# 	it "updates the Tag in the database"
-		# 	it "redirects to show"
-		# end
-
-		# context "with invalid attributes" do
-		# 	it "does not update the Tag in the database"
-		# 	it "re-renders the :edit template"
-		# end
 	end
 
 	describe "DELETE #destroy" do
