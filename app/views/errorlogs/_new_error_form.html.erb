@@ -1,10 +1,10 @@
 <h2>New error</h2>
 
-<%= form_for @errorlog, html: {multipart: true} do |f| %>
+<%= form_for @errorlog, html: { multipart: true } do |f| %>
 
   <div>
     <%= f.label :image %>
-    <%= f.file_field :title, autofocus: true %>
+    <%= f.file_field :image %>
   </div>
 
   <div><%= f.label :title %><br />
