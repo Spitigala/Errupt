@@ -1,6 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Solution, :type => :model do
+describe Solution do
+
+  it { should belong_to(:errorlog) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:worked?) }
   
 	it "is valid with a description and worked?" do
 		expect(Solution.new(description: "test description 1234 $%&*^645", worked?: true)).to be_valid

@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe ErrorTag do
 
+  it { should belong_to(:errorlog) }
+  it { should belong_to(:tag) }
+
 	before :each do
 		@errorlog = create(:errorlog)
 		@tag = create(:tag)
