@@ -49,7 +49,8 @@ class ErrorlogsController < ApplicationController
   private
 
   def errorlog_params
-    params.require(:errorlog).permit!
+    params.require(:errorlog).permit(:title, :description, :os, :os_version, :language, 
+      :language_version, :framework, :framework_version, :public, :image)
   end
 
 end
