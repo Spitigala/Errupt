@@ -7,7 +7,7 @@ class SolutionsController < ApplicationController
 
 	def create
 		@solution = Solution.new(errorlog_id: @errorlog.id, description: solution_params[:description], 
-														 worked?: solution_params[:worked?])
+														 worked: solution_params[:worked])
 		if @solution.save
 			flash[:success] = "Error Log was created!"
 			redirect_to errorlog_path(@errorlog.id)

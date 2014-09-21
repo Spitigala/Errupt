@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140914142853) do
   create_table "solutions", force: true do |t|
     t.integer  "errorlog_id"
     t.text     "description", null: false
-    t.boolean  "worked?",     null: false
+    t.boolean  "worked",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
