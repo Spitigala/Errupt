@@ -1,6 +1,11 @@
 <h2>New error</h2>
 
-<%= form_for @errorlog do |f| %>
+<%= form_for @errorlog, html: {multipart: true} do |f| %>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :title, autofocus: true %>
+  </div>
 
   <div><%= f.label :title %><br />
   <%= f.text_field :title, autofocus: true %></div>
