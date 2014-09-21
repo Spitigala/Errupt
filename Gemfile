@@ -35,7 +35,7 @@ gem 'paperclip', '~> 4.2.0'
 
 gem 'rails_12factor'
 
-gem 'rails_12factor'
+gem 'figaro'
 
 
 group :test, :development do 
