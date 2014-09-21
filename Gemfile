@@ -32,9 +32,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 4.2.0'
-
-gem 'rails_12factor'
-
+gem 'aws-sdk', '1.53.0'
 
 group :test, :development do 
   gem 'rspec-rails', '~> 2.14.0'
