@@ -33,6 +33,8 @@ gem 'spring',        group: :development
 gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 4.2.0'
 
+gem 'rails_12factor'
+
 
 group :test, :development do 
   gem 'rspec-rails', '~> 2.14.0'
