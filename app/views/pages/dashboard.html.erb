@@ -3,7 +3,7 @@
 <div>
 	<h3>Your Error Logs</h3>
 	<% current_user.errorlogs.each do |errorlog|%>
-		<%= errorlog.title %>
+	<%= link_to errorlog.title, errorlog_path(errorlog) %>
 	<% end %>
 </div>
 

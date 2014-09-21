@@ -1,5 +1,19 @@
-<h2>Errorlog</h2>
+<h2><%= @errorlog.title %></h2>
+<div class="screenshot">
+<% if @errorlog.image_file_name != nil %>
+	<%= image_tag @errorlog.image.url %>
+<% end %>
+</div>
 
-<%= image_tag @errorlog.image.url %>
-<%= @errorlog.title %>
-<%= @errorlog.description %>
+<div class="err-desc">
+	<%= @errorlog.description %>
+</div>
+
+<div class="err-info">
+	<p><%= @errorlog.os %></p>
+	<p><%= @errorlog.os_version %></p>
+	<p><%= @errorlog.language %></p>
+	<p><%= @errorlog.language_version %></p>
+	<p><%= @errorlog.framework %></p>
+	<p><%= @errorlog.framework_version %></p>
+</div>
