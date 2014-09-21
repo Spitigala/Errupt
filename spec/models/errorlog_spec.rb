@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Errorlog, :type => :model do
+
+  it { should belong_to(:user) }
+  it { should have_many(:solutions) }
+  it { should have_many(:error_tags) }
+  it { should have_many(:tags).through(:error_tags) }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:description) }
+
   it "is valid with title and description" do 
   	expect(Errorlog.new(title: "test error", description: "test description of error")).to be_valid
   end

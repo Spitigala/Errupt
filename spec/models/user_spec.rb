@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+
+  it { should have_many(:errorlogs) }
+  it { should validate_presence_of(:firstname) }
+  it { should validate_presence_of(:lastname) }
+  it { should validate_presence_of(:username) }
+  it { should validate_presence_of(:email) }
+
   it "is valid with a firstname, lastname, username, email and password" do
   	expect(build(:user)).to be_valid
   end
@@ -29,6 +36,7 @@ RSpec.describe User, :type => :model do
     user1 = create(:user, email: "email2@example.com")
     user2  = build(:user, email: "email2@example.com")
   	expect(user2).to have(2).errors_on(:email)
+    should validate_uniqueness_of(:email)
   end
 
   it "has an errorlog entry" do
@@ -39,5 +47,6 @@ RSpec.describe User, :type => :model do
     user1 = create(:user, username: "testname")
     user2 = build(:user, username: "testname")
   	expect(user2).to have(1).errors_on(:username)
+    should validate_uniqueness_of(:username)
   end
 end

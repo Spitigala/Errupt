@@ -4,7 +4,7 @@ class CreateSolutions < ActiveRecord::Migration
 
     	t.belongs_to :errorlog
     	t.text :description, null: false
-    	t.boolean :worked?, null: false
+    	t.boolean :worked, null: false
 
       t.timestamps
     end
