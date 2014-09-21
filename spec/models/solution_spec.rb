@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Solution do
+RSpec.describe Solution, :type => :model do
 
   it { should belong_to(:errorlog) }
   it { should validate_presence_of(:description) }

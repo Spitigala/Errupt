@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Tag do
+RSpec.describe Tag, :type => :model do
 
   it { should have_many(:error_tags) }
   it { should have_many(:errorlogs).through(:error_tags) }

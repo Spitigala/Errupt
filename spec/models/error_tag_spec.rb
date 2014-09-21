@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ErrorTag do
+RSpec.describe ErrorTag, :type => :model do
 
   it { should belong_to(:errorlog) }
   it { should belong_to(:tag) }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Errorlog do
+RSpec.describe Errorlog, :type => :model do
 
   it { should belong_to(:user) }
   it { should have_many(:solutions) }
