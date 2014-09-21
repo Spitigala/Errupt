@@ -1,7 +1,9 @@
 class CreateErrorLogs < ActiveRecord::Migration
   def change
-    create_table :error_logs do |t|
+    create_table :errorlogs do |t|
 
+      t.belongs_to :user
+      # t.belongs_to :ErrorTag
     	t.string :title, null: false
     	t.text :description, null: false
     	t.string :os
@@ -9,7 +11,8 @@ class CreateErrorLogs < ActiveRecord::Migration
     	t.string :language
     	t.string :language_version
     	t.string :framework
-    	t.string :framework_version
+      t.string :framework_version
+    	t.boolean :public, default: true
 
       t.timestamps
     end

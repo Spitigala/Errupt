@@ -2,5 +2,10 @@
 
 FactoryGirl.define do
   factory :tag do
+  	tag_name "Ruby"
+
+  	factory :invalid_tag do
+  		tag_name nil
+  	end
   end
 end

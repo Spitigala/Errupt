@@ -31,6 +31,9 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'devise', '~> 3.3.0'
+gem 'paperclip', '~> 4.2.0'
+
+gem 'rails_12factor'
 
 gem 'rails_12factor'
 
@@ -57,4 +60,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+ruby "2.0.0"
 

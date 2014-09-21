@@ -2,5 +2,11 @@
 
 FactoryGirl.define do
   factory :solution do
+  	description {Faker::Lorem.paragraph}
+  	worked true
+
+  	factory :invalid_solution do
+  		worked nil
+  	end
   end
 end

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'pages#home'
 
   get 'about' => 'pages#about'
+  get 'dashboard' => 'pages#dashboard'
 
-  resources :errors
-  resources :solutions
-  resources :tags
+  resources :errorlogs do
+    resources :solutions
+    resources :tags
+  end
 
 
 
