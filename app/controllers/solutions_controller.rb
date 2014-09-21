@@ -52,7 +52,7 @@ class SolutionsController < ApplicationController
 
 
 	def solution_params
-	  params.require(:solution).permit!
+	  params.require(:solution).permit(:description, :worked)
 	end
 
 end
