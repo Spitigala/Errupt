@@ -8,6 +8,7 @@ class Errorlog < ActiveRecord::Base
 
 	validates :title, presence: true
 	validates :description, presence: true
+  validates_inclusion_of :public, in: [true, false]
 
 	def self.tagged_with(tag_name)
     Tag.find_by_tag_tag_name!(tag_name).errorlogs

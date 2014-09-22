@@ -32,9 +32,9 @@
   <%= f.text_field :framework_version, autofocus: true %></div>
 
   <div>
-    <%= radio_button_tag(:public, true) %>
+    <%= f.radio_button(:public, true) %>
     <%= label_tag(:public, "Public") %>
-    <%= radio_button_tag(:public, false) %>
+    <%= f.radio_button(:public, false) %>
     <%= label_tag(:public, "Private") %>
   </div>
 

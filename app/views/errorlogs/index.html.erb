@@ -1,1 +1,5 @@
 <p>Testing error logs index page</p>
+
+<% @public_errorlogs.each do |errorlog| %>
+<%= errorlog.title %>
+<% end %>
