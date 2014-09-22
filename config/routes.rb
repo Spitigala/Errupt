@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   resources :errorlogs do
     resources :solutions
-    resources :tags
   end
+  
+  resources :tags
 
 
 

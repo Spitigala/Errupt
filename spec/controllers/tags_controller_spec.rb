@@ -14,21 +14,13 @@ describe TagsController do
 		create(:tag)
 	end
 
-	let!(:errortag) do
-		create(:error_tag, errorlog_id: errorlog.id, tag_id: tag1.id)
-	end
-
-	describe "GET #index" do
-		# don't show list of all tags, only tags for a related error
-	end
-
 	describe "GET #new" do
 		it "assigns a new Tag to tag" do
-			get :new, errorlog_id: errorlog
+			get :new
 			expect(assigns(:tag)).to be_a_new(Tag)
 		end
 		it "renders the :new template" do
-			get :new, errorlog_id: errorlog
+			get :new
 			expect(response).to render_template :new
 		end
 	end
@@ -37,48 +29,36 @@ describe TagsController do
 		context "with valid attributes" do
 			it "saves the new Tag in the database"do
 				expect{
-					post :create, errorlog_id: errorlog, tag: attributes_for(:tag)
+					post :create, tag: attributes_for(:tag)
 				}.to change(Tag, :count).by(1)
 			end
-			it "redirects to errorlog#show page for related error" do
-				post :create, errorlog_id: errorlog, tag: attributes_for(:tag)
-				expect(response).to redirect_to  errorlog_path(errorlog)
+			it "redirects to tag#show page for related error" do
+				post :create, tag: attributes_for(:tag)
+				expect(response).to redirect_to tag_path(assigns[:tag])
 			end
 		end
 
 		context "with invalid attributes" do
 			it "does not save the new Tag in the database" do
 				expect{
-					post :create, errorlog_id: errorlog, tag: attributes_for(:invalid_tag)
+					post :create, tag: attributes_for(:invalid_tag)
 				}.to_not change(Tag, :count)
 			end
 			it "re-renders the :new template"do
-				post :create, errorlog_id: errorlog, tag: attributes_for(:invalid_tag)
+				post :create, tag: attributes_for(:invalid_tag)
 				expect(response).to render_template :new
 			end
 		end
 	end
 
-	describe "GET #show" do
-		# don't show individual tags, only a list of tags for a related error?
-	end
-
-	describe "GET #edit" do
-		# Don't allow tags to be edited. only create and delete?
-	end
-
-	describe "PATCH #update" do
-		# Don't allow tags to be updated. only create and delete?
-	end
-
 	describe "DELETE #destroy" do
 		it "deletes a Tag from the database" do
 			expect{
-				delete :destroy, errorlog_id: errorlog, id: tag1
+				delete :destroy, id: tag1
 			}.to change(Tag, :count).by(-1)
 		end
-		it "redirects to tags#index page" do
-			delete :destroy, errorlog_id: errorlog, id: tag1
+		it "redirects to errorlog page" do
+			delete :destroy, id: tag1
 			expect(response).to redirect_to errorlog_path
 		end
 	end
