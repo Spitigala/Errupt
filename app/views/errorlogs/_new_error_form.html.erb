@@ -38,13 +38,16 @@
     <%= label_tag(:public, "Private") %>
   </div>
 
+  <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
   <div><%= f.submit "Create Log" %></div>
 <% end %>
 
 
-<%= form_for :tag, :url => tag_path %>
-  
-<% end %>
+
 
 
 

@@ -4,6 +4,7 @@
 	<h3>Your Error Logs</h3>
 	<% current_user.errorlogs.each do |errorlog|%>
 	<%= link_to errorlog.title, errorlog_path(errorlog) %>
+	<p>Tags: <%= raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.join(', ') %></p>
 	<% end %>
 </div>
 
