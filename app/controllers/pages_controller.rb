@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+  	@public_errorlogs = Errorlog.where(public: true)
   end
 
   def about

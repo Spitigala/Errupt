@@ -1,7 +1,7 @@
 class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
- 		@public_errorlogs = Errorlog.where(public: true)
+    @public_errorlogs = Errorlog.where(public: true)
   end
 
   def show
@@ -13,20 +13,20 @@ class ErrorlogsController < ApplicationController
   end
 
   def create
-  	@errorlog = current_user.errorlogs.build(errorlog_params)
+    @errorlog = current_user.errorlogs.build(errorlog_params)
 
-  	if @errorlog.save
-  		flash[:success] = "Error Log was created!"
-  		redirect_to errorlog_path(@errorlog.id)
-  	else
-  		flash.now.alert = "There's an error with your error log. Inception much?"
+    if @errorlog.save
+      flash[:success] = "Error Log was created!"
+      redirect_to errorlog_path(@errorlog.id)
+    else
+      flash.now.alert = "There's an error with your error log. Inception much?"
       render 'new'
-  	end
+    end
 
   end
 
   def edit
-  	@errorlog = Errorlog.find(params[:id])
+    @errorlog = Errorlog.find(params[:id])
   end
 
   def update

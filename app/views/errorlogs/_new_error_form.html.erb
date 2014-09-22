@@ -2,21 +2,21 @@
 
 <%= form_for @errorlog, html: { multipart: true } do |f| %>
 
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-
   <div><%= f.label :title %><br />
   <%= f.text_field :title, autofocus: true %></div>
 
   <div><%= f.label :description %><br />
   <%= f.text_area :description, size: "60x12",autofocus: true %></div>
 
-  <div><%= f.label :os %><br />
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div><%= f.label :os, "OS" %><br />
   <%= f.text_field :os, autofocus: true %></div>
 
-  <div><%= f.label :OS_Version %><br />
+  <div><%= f.label :os_version, "OS version" %><br />
   <%= f.text_field :os_version, autofocus: true %></div>
 
   <div><%= f.label :language %><br />
@@ -31,8 +31,23 @@
   <div><%= f.label :framework_version %><br />
   <%= f.text_field :framework_version, autofocus: true %></div>
 
-  <div><%= f.label :public %><br />
-  <%= f.text_field :public, autofocus: true %></div>
+  <div>
+    <%= radio_button_tag(:public, true) %>
+    <%= label_tag(:public, "Public") %>
+    <%= radio_button_tag(:public, false) %>
+    <%= label_tag(:public, "Private") %>
+  </div>
 
   <div><%= f.submit "Create Log" %></div>
 <% end %>
+
+
+<%= form_for :tag, :url => tag_path %>
+  
+<% end %>
+
+
+
+
+
+
