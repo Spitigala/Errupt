@@ -6,9 +6,9 @@
   <%= f.text_area :description, size: "60x12",autofocus: true %></div>
 <p>Worked?</p>
   <div>
-    <%= f.radio_button(:worked, true) %>
+    <%= f.radio_button(:worked, 1) %>
     <%= label_tag(:worked, "Yes") %>
-    <%= f.radio_button(:worked, false) %>
+    <%= f.radio_button(:worked, 0) %>
     <%= label_tag(:worked, "No") %>
   </div>
 

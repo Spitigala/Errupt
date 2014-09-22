@@ -18,4 +18,8 @@
 	<p><%= @errorlog.framework_version %></p>
 </div>
 
+<% @errorlog.solutions.each do |solution| %>
+<%= solution.description %>
+<% end %>
+
 <p><%= link_to "Add new solution", new_errorlog_solution_path(@errorlog) %></p>
