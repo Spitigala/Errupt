@@ -12,6 +12,13 @@ class PagesController < ApplicationController
   	end
 
     @user_errorlogs = Errorlog.where(user_id: current_user.id).order("created_at DESC")
+
+    if params[:tag]
+      @user_errorlogs = @user_errorlogs.tagged_with(params[:tag])
+    else
+      @user_errorlogs
+    end
+
   end
 
 end
