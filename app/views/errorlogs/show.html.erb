@@ -17,11 +17,11 @@
 	<p><%= @errorlog.framework %></p>
 	<p><%= @errorlog.framework_version %></p>
 </div>
+<p><%= link_to "Edit Error Log", edit_errorlog_path %></p>
 
 
 
 <% @errorlog.solutions.each do |solution| %>
 <%= solution.description %>
+<p><%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %></p>
 <% end %>
-
-<p><%= link_to "Edit Error Log", edit_errorlog_path %></p>

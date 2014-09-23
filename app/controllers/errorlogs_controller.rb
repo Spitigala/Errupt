@@ -1,7 +1,7 @@
 class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @public_errorlogs = Errorlog.where(public: true)
+    @public_errorlogs = Errorlog.where(public: true).order("created_at DESC")
   end
 
   def show
