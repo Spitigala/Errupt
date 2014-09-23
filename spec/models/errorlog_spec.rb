@@ -1,6 +1,9 @@
 require 'rails_helper'
 
+
 RSpec.describe Errorlog, :type => :model do
+
+  let(:errorlog) { FactoryGirl.create(:errorlog) }
 
   it { should belong_to(:user) }
   it { should have_many(:solutions) }
@@ -25,6 +28,19 @@ RSpec.describe Errorlog, :type => :model do
   
   it "is invalid without description" do
   	expect(Errorlog.new(description: nil)).to have(1).errors_on(:description)
+  end
+
+  describe "tagged_with method" do
+    it "returns a list of errorlogs with a given tag" do
+      errorlog.tags << create(:tag, tag_name: "taggedwithtest")
+      expect(Errorlog.tagged_with("taggedwithtest")).to match_array([errorlog])
+    end
+  end
+
+  describe "tag_list method" do
+    it "return a list of errorlog's tags in a string" do
+      expect(errorlog.tag_list).to eq ("Ruby, Ruby")
+    end
   end
 
   describe "Errorlog association tests" do
