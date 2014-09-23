@@ -8,6 +8,7 @@ RSpec.describe Errorlog, :type => :model do
   it { should have_many(:tags).through(:error_tags) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
+  it { should validate_inclusion_of(:public).in_array([true,false]) }
 
   it "is valid with title and description" do 
   	expect(Errorlog.new(title: "test error", description: "test description of error")).to be_valid
