@@ -21,6 +21,10 @@ RSpec.describe Errorlog, :type => :model do
      framework, framework version" do
      expect(build(:errorlog)).to be_valid
   end
+
+  it "is valid with public: false" do
+     expect(build(:errorlog, public: false)).to be_valid
+  end
   
   it "is invalid without title" do
   	expect(Errorlog.new(title: nil)).to have(1).errors_on(:title)
@@ -41,6 +45,16 @@ RSpec.describe Errorlog, :type => :model do
     it "return a list of errorlog's tags in a string" do
       expect(errorlog.tag_list).to eq ("Ruby, Ruby")
     end
+  end
+
+  describe "tag_list=(names) method" do
+    it "creates tags from a string" do
+      new_errorlog = create(:errorlog, tag_list: "testtag1, testtag2")
+      expect(new_errorlog.tags.first.tag_name).to eq "testtag1"
+      expect(new_errorlog.tags.last.tag_name).to eq "testtag2"
+    end
+
+    it "doesn't create a tag if it exists"
   end
 
   describe "Errorlog association tests" do
