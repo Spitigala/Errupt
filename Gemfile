@@ -33,7 +33,7 @@ gem 'spring',        group: :development
 gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk', '1.53.0'
-gem 'foundation-rails', '~> 5.4.4.0'
+gem 'foundation-rails', '5.3.3.0'
 
 group :test, :development do 
   gem 'rspec-rails', '~> 2.14.0'
