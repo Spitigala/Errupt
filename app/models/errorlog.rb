@@ -8,4 +8,19 @@ class Errorlog < ActiveRecord::Base
 
 	validates :title, presence: true
 	validates :description, presence: true
+  validates_inclusion_of :public, in: [true, false]
+
+	def self.tagged_with(tag_name)
+    Tag.find_by_tag_name!(tag_name).errorlogs
+  end
+  
+  def tag_list
+    tags.map(&:tag_name).join(", ")
+  end
+  
+  def tag_list=(names)
+    self.tags = names.split(",").map do |n|
+      Tag.where(tag_name: n.strip).first_or_create!
+    end
+  end
 end

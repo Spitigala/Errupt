@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
   get 'dashboard' => 'pages#dashboard'
+  get 'dashboard/:tag', to: 'pages#dashboard', as: :tag
 
   resources :errorlogs do
     resources :solutions
-    resources :tags
   end
+  
+  resources :tags
 
 
 

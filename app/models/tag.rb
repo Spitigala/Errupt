@@ -7,4 +7,9 @@ class Tag < ActiveRecord::Base
 		where("tag_name LIKE ?", "#{tag}") #search by tag
 	end
 
+	def self.tag_counts
+	  Tag.select("tags.*, count(error_tags.tag_id) as count").
+	    joins(:error_tags).group("error_tags.tag_id")
+	end
+
 end
