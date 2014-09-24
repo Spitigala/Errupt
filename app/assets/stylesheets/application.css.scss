@@ -28,11 +28,6 @@
 .home-panel-image {
 	width: 50%;
 }
- 
-// .form-row {
-// 	width: 70%;
-// 	margin-left: 15%;
-// }
 
 //small screen sizes
 @media (max-width: 991px) {
@@ -46,10 +41,14 @@
 }
 
 .dashboard-content {
-	margin-right: 5%;
+	margin-right: 10%;
 }
 
 .dash-panel p a {
+	color: white;
+}
+
+.err-info p a {
 	color: white;
 }
 
@@ -71,11 +70,19 @@
 }
 
 .title {
-	background-color: #CF000F;
+	background-color: #19B5FE;
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
 
 .title h2, h3 {
 	color: white;
+}
+
+.err-desc {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.icon-bar {
+	padding: 2% 0 0 0;
 }
