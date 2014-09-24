@@ -33,3 +33,30 @@
 // 	width: 70%;
 // 	margin-left: 15%;
 // }
+
+//small screen sizes
+@media (max-width: 991px) {
+    .mobile-only {
+        display:block !important;
+    }
+ 
+    .desktop-only {
+        display:none !important;
+    }
+}
+
+.dashboard-content {
+	margin-right: 5%;
+}
+
+.dash-panel p a {
+	color: white;
+}
+
+.dash-panel h5 a{
+	color: red;
+}
+
+
+
+
