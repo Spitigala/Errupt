@@ -10,6 +10,7 @@ class ErrorlogsController < ApplicationController
 
   def new
     @errorlog = Errorlog.new
+    render layout: "dashboard_layout"
   end
 
   def create

@@ -1,28 +1,18 @@
-<div class="icon-bar vertical three-up large-2 columns desktop-only">
-  <a class="item" href="dashboard">
-    <i class="fa fa-home"></i>
-    <label>Home</label>
-  </a>
-  <a class="item" href="errorlogs/new">
-    <i class="fa fa-plus"></i>
-    <label>Log error</label>
-  </a>
-  <a class="item">
-    <i class="fa fa-cogs"></i>
-    <label>Account</label>
-  </a>
-</div>
-
 <div class="dashboard-content small-10 columns">
 	<h6>Welcome, <%= current_user.firstname.capitalize %></h6>
-	<h3>Your Error Logs</h3>
+
+	<div class="title">
+		<h3>Your Error Logs</h3>
+	</div>
+
 	<div>
 		<% @user_errorlogs.each do |errorlog|%>
 			<div class="panel dash-panel">
 			  <h5><%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
-			  <p><% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
-                  <span class="[success alert secondary] label"><%= t %></span>
-            <% end %>
+			  <p>
+			  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
+          	<span class="[success alert secondary] label"><%= t %></span>
+          <% end %>
         </p>
 			</div>
 		<% end %>
