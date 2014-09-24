@@ -53,8 +53,6 @@ RSpec.describe Errorlog, :type => :model do
       expect(new_errorlog.tags.first.tag_name).to eq "testtag1"
       expect(new_errorlog.tags.last.tag_name).to eq "testtag2"
     end
-
-    it "doesn't create a tag if it exists"
   end
 
   describe "Errorlog association tests" do

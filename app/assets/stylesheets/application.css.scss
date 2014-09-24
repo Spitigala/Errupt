@@ -15,3 +15,21 @@
  *= require foundation_and_overrides
 
  */
+.home-panel {
+	// background-color: #005e99;
+	height: 100%;
+	background-image: url("errupt-bg2.jpg")
+}
+
+.home-panel-content, h1 {
+	color: black;
+}
+
+.home-panel-image {
+	width: 50%;
+}
+ 
+// .form-row {
+// 	width: 70%;
+// 	margin-left: 15%;
+// }

@@ -1,9 +1,17 @@
-<h1>Welcome to Errupt!</h1>
-<% if user_signed_in? %>
+<div class="home-panel small-12 columns">
+	<div class="home-panel-content">
+		<h1>Log more. Search less.</h1>
 
-<% else %>
-	<%= link_to "Log in", new_user_session_path %>
-  <%= link_to "Sign up", new_user_registration_path%>
-<% end %>
+		<p>Keep a log of errors you come across during development, as well as your attempts and solutions for future reference.</p>
 
-<p>Home page</p>
+		<% if user_signed_in? %>
+			<p>Dashboard</p>
+		<% else %>
+			<a href="<%= new_user_registration_path %>" class="button">Sign Up</a>
+			<a href="<%= about_path %>" class="button">Learn More</a>
+		<% end %>
+	</div>
+	<div class="home-panel-image">
+
+	</div>
+</div>
