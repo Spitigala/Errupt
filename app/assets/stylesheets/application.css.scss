@@ -69,8 +69,16 @@
 	background-color: #CF000F;
 }
 
+.green-button {
+	background-color: #2ECC71;
+}
+
+.solution-button {
+	padding: 0;
+}
+
 .title {
-	background-color: #19B5FE;
+	background-color: #CF000F;
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
@@ -81,6 +89,14 @@
 
 .err-desc {
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.worked-solution-desc {
+	background-color: #2ABB9B;
+}
+
+.failed-solution-desc {
+	background-color: #F9BF3B;
 }
 
 .icon-bar {
