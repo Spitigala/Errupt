@@ -1,11 +1,10 @@
 <div class="dashboard-content small-9 columns">
-	<h6>Welcome, <%= current_user.firstname.capitalize %></h6>
 
 	<div class="title">
 		<h3>Your Error Logs</h3>
 	</div>
 
-	<div class="panel small-6 columns">
+	<div class="panel small-6 columns container1">
 		<% @user_errorlogs.each do |errorlog|%>
 			<div class="panel dash-panel">
 			  <h5><%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
@@ -17,13 +16,28 @@
 			</div>
 		<% end %>
 	</div>
-		<div class="panel small-6 columns">
-		<h2>Total Errors <%= @total_errors %></h2>
-		<h2>Total Unsolved <%= @unsolved_errors %></h2>
-		<h2>Search</h2>
-		<% @alltags.each do |tag| %>
-		<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
-		<% end %>
+
+	<div class="panel small-6 columns container2">
+		<div class="row">
+			<div class="panel small-6 columns sm-dash-widget1">
+				<h2>Total Errors</h2>
+				<p><%= @total_errors %></p>
+			</div>
+
+			<div class="panel small-6 columns sm-dash-widget2">
+				<h2>Unsolved</h2>
+				<p><%= @unsolved_errors %></p>
+			</div>
+		</div>
+		
+		<div class="row panel callout unique-tags">
+			<p>
+				<% @unique_user_tags.each do |tag| %>
+					<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
+				<% end %>
+			</p>
+
+		</div>
 
 
 		</div>

@@ -65,7 +65,7 @@
 <% if solution.worked == true %>
 <div class="row">
 	<div class="small-9 columns panel callout radius worked-solution-desc">
-		<%= solution.description %>
+		<%= simple_format(solution.description) %>
 		<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
 	</div>
 </div>

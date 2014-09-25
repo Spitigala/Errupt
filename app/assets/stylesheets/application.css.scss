@@ -23,6 +23,7 @@
 
 body {
 	background-color: #DADFE1;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .home-panel-content, h1 {
@@ -63,6 +64,7 @@ body {
 
 .dash-panel p a {
 	color: white;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .err-info {
@@ -76,7 +78,9 @@ body {
 
 .dash-panel h5 a{
 	color: #CF000F;
+	font-family: 'Open Sans', sans-serif;
 }
+
 
 .signup-form {
 	width: 60%;
@@ -89,7 +93,6 @@ body {
 
 .red-button {
 	background-color: #CF000F;
-	border-left: 4px black solid;
 }
 
 .green-button {
@@ -105,10 +108,12 @@ body {
 	background-color: #CF000F;
 	margin-top: 2%;
 	margin-bottom: 2%;
+	padding: 0.5%;
 }
 
 .title h2, h3 {
 	color: white;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .err-desc {
@@ -117,10 +122,12 @@ body {
 
 .worked-solution-desc {
 	background-color: #2ABB9B;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 .failed-solution-desc {
 	background-color: #F9BF3B;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 .icon-bar {
@@ -133,12 +140,48 @@ body {
 	text-align: left;
 }
 
+
+.item {
+	border-left: 3px solid #CF000F;
+	margin-top: 10px !important;
+}
+
+
 .item:hover {
 	background-color: black;
-	border-left: 3px solid #4ECDC4;
+	border-left: 3px solid #19B5FE;
 	// padding-left: 0;
 }
 
 .item i {
 	font-size: 1em;
+}
+
+.sm-dash-widget1 {
+	height: 200px;
+	background-color: #6BB9F0;
+	border-left: 5px solid white;
+}
+
+.sm-dash-widget2 {
+	height: 200px;
+	background-color: #36D7B7;
+	border-left: 5px solid white;
+}
+
+.sm-dash-widget1 h2, .sm-dash-widget2 h2 {
+	font-size: 2em;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+.sm-dash-widget1 p, .sm-dash-widget2 p {
+	font-size: 3em;
+	text-align: center;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.unique-tags a {
+	color: white !important;
 }
