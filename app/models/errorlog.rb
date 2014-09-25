@@ -23,4 +23,13 @@ class Errorlog < ActiveRecord::Base
       Tag.where(tag_name: n.strip).first_or_create!
     end
   end
+
+  def self.tags(user_id)
+    all_tags = []
+    user_errors = self.where(user_id: user_id)
+    user_errors.each do |error|
+      all_tags << error.tags.map(&:tag_name)
+    end
+    return all_tags.uniq!.flatten!
+  end
 end

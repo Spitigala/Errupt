@@ -1,11 +1,11 @@
-<div class="dashboard-content small-10 columns">
+<div class="dashboard-content small-9 columns">
 	<h6>Welcome, <%= current_user.firstname.capitalize %></h6>
 
 	<div class="title">
 		<h3>Your Error Logs</h3>
 	</div>
 
-	<div>
+	<div class="panel small-6 columns">
 		<% @user_errorlogs.each do |errorlog|%>
 			<div class="panel dash-panel">
 			  <h5><%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
@@ -17,6 +17,15 @@
 			</div>
 		<% end %>
 	</div>
-	<%= link_to "Create new Error Log", new_errorlog_path %>
+		<div class="panel small-6 columns">
+		<h2>Total Errors <%= @total_errors %></h2>
+		<h2>Total Unsolved <%= @unsolved_errors %></h2>
+		<h2>Search</h2>
+		<% @alltags.each do |tag| %>
+		<%= tag %>
+		<% end %>
+
+
+		</div>
 </div>
 

@@ -9,4 +9,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :errorlogs
+
+  def total_errors
+  	self.errorlogs.count
+  end
+
+  def unsolved
+  	unsolved_errors = []
+  	all_errors = self.errorlogs
+  	all_errors.each do |error|
+  		if error.solutions.count < 1
+  			unsolved_errors << error
+  		end
+  	end	
+  	return unsolved_errors.count
+  end
 end
