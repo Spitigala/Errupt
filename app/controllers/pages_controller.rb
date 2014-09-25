@@ -13,8 +13,8 @@ class PagesController < ApplicationController
 
     @user_errorlogs = Errorlog.where(user_id: current_user.id).order("created_at DESC")
     @total_errors = current_user.total_errors
-    @unsolved_errors = current_user.unsolved
-    @alltags = Errorlog.tags(current_user.id)
+    @unsolved_errors = Errorlog.unsolved(current_user.id)
+    @unique_user_tags = Errorlog.unique_user_tags(current_user.id)
 
     if params[:tag]
       @user_errorlogs = @user_errorlogs.tagged_with(params[:tag])
