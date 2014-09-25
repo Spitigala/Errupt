@@ -22,7 +22,7 @@
 		<h2>Total Unsolved <%= @unsolved_errors %></h2>
 		<h2>Search</h2>
 		<% @alltags.each do |tag| %>
-		<%= tag %>
+		<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
 		<% end %>
 
 

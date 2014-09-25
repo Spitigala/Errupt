@@ -30,6 +30,6 @@ class Errorlog < ActiveRecord::Base
     user_errors.each do |error|
       all_tags << error.tags.map(&:tag_name)
     end
-    return all_tags.uniq!.flatten!
+    return all_tags.flatten!.uniq!
   end
 end
