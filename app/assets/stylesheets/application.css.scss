@@ -21,12 +21,25 @@
 	background-image: url("errupt-bg2.jpg")
 }
 
+body {
+	background-color: #DADFE1;
+}
+
 .home-panel-content, h1 {
 	color: black;
 }
 
 .home-panel-image {
 	width: 50%;
+}
+
+.top-bar {
+	background-color: black;
+}
+
+.top-bar .name h1  {
+	color: white;
+	background-color: #CF000F;
 }
 
 //small screen sizes
@@ -44,11 +57,20 @@
 	margin-right: 10%;
 }
 
+.dash-panel {
+	background-color: white;
+}
+
 .dash-panel p a {
 	color: white;
 }
 
-.err-info p a {
+.err-info {
+	background-color: black;
+	padding-left: 15px;
+}
+
+.err-info p, a {
 	color: white;
 }
 
@@ -67,10 +89,12 @@
 
 .red-button {
 	background-color: #CF000F;
+	border-left: 4px black solid;
 }
 
 .green-button {
 	background-color: #2ECC71;
+	border-left: 4px black solid;
 }
 
 .solution-button {
@@ -101,4 +125,20 @@
 
 .icon-bar {
 	padding: 2% 0 0 0;
+	width: 12% !important;
+	background-color: #333333;
+}
+
+.icon-bar > * {
+	text-align: left;
+}
+
+.item:hover {
+	background-color: black;
+	border-left: 3px solid #4ECDC4;
+	// padding-left: 0;
+}
+
+.item i {
+	font-size: 1em;
 }
