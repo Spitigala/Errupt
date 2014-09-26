@@ -1,10 +1,11 @@
 <div class="row">
   <div class="large-12 columns title">
-    <h2>New Error Log</h2>
+    <h2>Edit Error Log</h2>
   </div>
 </div>
 
 <%= form_for @errorlog, html: { multipart: true } do |f| %>
+
   <div class="row">
     <div class="large-12 columns">
       <%= f.label :title %>
@@ -77,16 +78,7 @@
 
   <div class="row">
     <div class="large-12 columns">
-      <%= f.submit "Create Error Log", class: "button red-button" %>
+      <%= f.submit "Update Error Log", class: "button red-button" %>
     </div>
   </div>
 <% end %>
-
-
-
-
-
-
-
-
-

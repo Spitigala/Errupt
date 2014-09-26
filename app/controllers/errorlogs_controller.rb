@@ -29,6 +29,7 @@ class ErrorlogsController < ApplicationController
 
   def edit
     @errorlog = Errorlog.find(params[:id])
+    render layout: "dashboard_layout"
   end
 
   def update

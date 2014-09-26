@@ -16,13 +16,14 @@
 				<p>Framework Version: <%= @errorlog.framework_version %></p>
 			  <p>
 			  	<% @errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
-          	<span class="[success alert secondary] label"><%= t %></span>
-          <% end %>
-        </p>
+	        	<span class="[success alert secondary] label"><%= t %></span>
+	        <% end %>
+	      </p>
 			</div>
 			<p><%= link_to "Edit Error Log", edit_errorlog_path %></p>
 		</div>
 	</div>
+
 	<div class="row">
 		<div class="err-desc small-9 columns panel">
 			<%= simple_format(@errorlog.description) %>
@@ -62,21 +63,21 @@
 </div>
 
 <% @errorlog.solutions.each do |solution| %>
-<% if solution.worked == true %>
-<div class="row">
-	<div class="small-9 columns panel callout radius worked-solution-desc">
-		<%= simple_format(solution.description) %>
-		<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
-	</div>
-</div>
-<% else %>
-<div class="row">
-	<div class="small-9 columns panel radius failed-solution-desc">
-		<%= solution.description %>
-		<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
-	</div>
-</div>
-<% end %>
+	<% if solution.worked == true %>
+		<div class="row">
+			<div class="small-9 columns panel callout radius worked-solution-desc">
+				<%= simple_format(solution.description) %>
+				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
+			</div>
+		</div>
+	<% else %>
+		<div class="row">
+			<div class="small-9 columns panel radius failed-solution-desc">
+				<%= solution.description %>
+				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
+			</div>
+		</div>
+	<% end %>
 <% end %>
 
 
