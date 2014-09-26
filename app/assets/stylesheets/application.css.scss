@@ -15,25 +15,13 @@
  *= require foundation_and_overrides
 
  */
-.home-panel {
-	// background-color: #005e99;
-	height: 100%;
-	background-image: url("errupt-bg4.jpg")
-}
+
+
+/* Layout */
 
 body {
 	background-color: #DADFE1;
 	font-family: 'Open Sans', sans-serif;
-}
-
-.home-panel-content, h1 {
-	color: white;
-	background-color: black;
-	opacity: 0.8;
-}
-
-.home-panel-image {
-	width: 50%;
 }
 
 .top-bar {
@@ -47,54 +35,14 @@ body {
 	text-align: center;
 }
 
-//small screen sizes
 @media (max-width: 991px) {
-    .mobile-only {
-        display:block !important;
-    }
- 
-    .desktop-only {
-        display:none !important;
-    }
-}
+  .mobile-only {
+      display:block !important;
+  }
 
-.dashboard-content {
-	margin-right: 10%;
-}
-
-.dash-panel {
-	background-color: white;
-}
-
-.dash-panel p a {
-	color: white;
-	font-family: 'Open Sans', sans-serif;
-}
-
-.err-info {
-	background-color: black;
-	padding-left: 15px;
-}
-
-.err-info p, a {
-	color: white;
-}
-
-.dash-panel h5 a{
-	color: #CF000F;
-	font-family: 'Open Sans', sans-serif;
-}
-
-
-.signup-form {
-	// width: 60%;
-	// margin-left: 20%;
-	// margin-right: auto !important;
-}
-
-.new-error-form {
-	// margin-left: 5%;
-	// float: center;
+  .desktop-only {
+      display:none !important;
+  }
 }
 
 .red-button {
@@ -103,11 +51,6 @@ body {
 
 .green-button {
 	background-color: #2ECC71;
-	// border-left: 4px black solid;
-}
-
-.solution-button {
-	padding: 0;
 }
 
 .title {
@@ -122,19 +65,22 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.err-desc {
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+/* Home Page */
+
+.home-panel {
+	height: 100%;
+	background-image: url("errupt-bg4.jpg")
 }
 
-.worked-solution-desc {
-	background-color: #2ABB9B;
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+.home-panel-content, h1 {
+	color: white;
+	background-color: black;
+	opacity: 0.8;
 }
 
-.failed-solution-desc {
-	background-color: #F9BF3B;
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-}
+
+/* Dashboard */
 
 .icon-bar {
 	padding: 2% 0 0 0;
@@ -146,7 +92,6 @@ body {
 	text-align: left;
 }
 
-
 .item {
 	border-left: 3px solid #CF000F;
 	margin-top: 10px !important;
@@ -156,36 +101,41 @@ body {
 .item:hover {
 	background-color: black;
 	border-left: 3px solid #19B5FE;
-	// padding-left: 0;
 }
 
 .item i {
 	font-size: 1em;
 }
 
-// .sm-dash-widget1 {
-// 	height: 200px;
-// 	background-color: #6BB9F0;
-// 	border-left: 5px solid white;
-// }
+.dashboard-content {
+	margin-right: 10%;
+}
 
-// .sm-dash-widget2 {
-// 	height: 200px;
-// 	background-color: #36D7B7;
-// 	border-left: 5px solid white;
-// }
+.dash-error-panel {
+	background-color: white;
+}
 
+.dash-error-panel p a {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.dash-error-panel h5 a{
+	color: #CF000F;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.err-info {
+	background-color: black;
+	padding-left: 15px;
+}
+
+.err-info p, a {
+	color: white;
+}
 
 .container2 {
 	background-color: #BDC3C7;
-}
-
-.circle-widget1 h2, .circle-widget2 h2 {
-	font-size: 1.5em;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	padding-top: 15%;
-	text-align: center;
 }
 
 .circle-widget1 {
@@ -204,6 +154,13 @@ body {
 	border: 5px solid white;
 }
 
+.circle-widget1 h2, .circle-widget2 h2 {
+	font-size: 1.5em;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	padding-top: 15%;
+	text-align: center;
+}
 
 .circle-widget1 p, .circle-widget2 p {
 	font-size: 3em;
@@ -221,21 +178,32 @@ body {
 	border: 5px solid white;
 }
 
-
 .unique-tags-widget h2 {
 	font-size: 1.5em;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 }
 
-.signup-form * {
-	// margin-right: auto !important;
+
+/* Errorlog show page */
+
+.err-desc {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
-.row {
 
+/* Solution */
+
+.solution-button {
+	padding: 0;
 }
 
-#test {
-	margin-right: 0 !important;
+.worked-solution-desc {
+	background-color: #2ABB9B;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.failed-solution-desc {
+	background-color: #F9BF3B;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
