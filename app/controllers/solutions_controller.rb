@@ -3,6 +3,7 @@ class SolutionsController < ApplicationController
 
 	def new
 		@solution = Solution.new
+		render layout: "dashboard_layout"
 	end
 
 	def create
@@ -23,6 +24,7 @@ class SolutionsController < ApplicationController
 
 	def edit
 		@solution = Solution.find(params[:id])
+		render layout: "dashboard_layout"
 	end
 
 	def update

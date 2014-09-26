@@ -1,16 +1,3 @@
-<h2>Add new attempted solution:</h2>
-
-<%= form_for(@solution, url: errorlog_solutions_path(@errorlog)) do |f| %>
-
-  <div><%= f.label :description %><br />
-  <%= f.text_area :description, size: "60x12",autofocus: true %></div>
-<p>Worked?</p>
-  <div>
-    <%= f.radio_button(:worked, true) %>
-    <%= label_tag(:worked, "Yes") %>
-    <%= f.radio_button(:worked, false) %>
-    <%= label_tag(:worked, "No") %>
-  </div>
-
-  <div><%= f.submit "Create Solution" %></div>
-<% end %>
+<div class="small-8 columns end new-error-form">
+	<%= render 'new_solution_form' %>
+</div>

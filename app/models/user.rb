@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :errorlogs
+
+  def total_errors
+  	self.errorlogs.count
+  end
+
 end

@@ -23,4 +23,22 @@ class Errorlog < ActiveRecord::Base
       Tag.where(tag_name: n.strip).first_or_create!
     end
   end
+
+  def self.unique_user_tags(user_id)
+    all_tags = []
+    self.where(user_id: user_id).each do |error|
+      all_tags << error.tags.map(&:tag_name)
+    end
+    return all_tags.flatten!.uniq!.sort!
+  end
+
+  def self.unsolved(user_id)
+    unsolved_errors = []
+    self.where(user_id: user_id).each do |error|
+      if error.solutions.count < 1
+        unsolved_errors << error
+      end
+    end 
+    return unsolved_errors.count
+  end
 end

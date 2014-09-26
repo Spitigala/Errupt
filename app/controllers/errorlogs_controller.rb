@@ -6,10 +6,12 @@ class ErrorlogsController < ApplicationController
 
   def show
     @errorlog = Errorlog.find(params[:id])
+    render layout: "dashboard_layout"
   end
 
   def new
     @errorlog = Errorlog.new
+    render layout: "dashboard_layout"
   end
 
   def create
@@ -27,6 +29,7 @@ class ErrorlogsController < ApplicationController
 
   def edit
     @errorlog = Errorlog.find(params[:id])
+    render layout: "dashboard_layout"
   end
 
   def update
