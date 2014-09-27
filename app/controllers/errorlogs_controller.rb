@@ -2,6 +2,12 @@ class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     @public_errorlogs = Errorlog.where(public: true).order("created_at DESC")
+
+    if params[:public_tag]
+      @public_errorlogs = @public_errorlogs.public_tagged_with(params[:public_tag])
+    else
+      @public_errorlogs
+    end
   end
 
   def show

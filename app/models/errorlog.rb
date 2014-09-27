@@ -13,6 +13,10 @@ class Errorlog < ActiveRecord::Base
 	def self.tagged_with(tag_name)
     Tag.find_by_tag_name!(tag_name).errorlogs
   end
+
+  def self.public_tagged_with(tag_name)
+    Tag.find_by_tag_name!(tag_name).errorlogs.where(public: true)
+  end
   
   def tag_list
     tags.map(&:tag_name).join(", ")

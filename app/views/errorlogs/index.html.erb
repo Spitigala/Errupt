@@ -1,22 +1,26 @@
-<p>Testing error logs index page</p>
 
-<div class="panel small-12 large-6 columns container1">
-	<% @public_errorlogs.each do |errorlog|%>
-		<div class="panel dash-error-panel">
-			<div class="row">
-				<div class="small-11 columns">
-		  		<h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+
+<div class="row">
+	<div class="title small-12 columns">
+		<h3>Public Errorlogs</h3>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel small-12 columns container1">
+		<% @public_errorlogs.each do |errorlog|%>
+			<div class="panel dash-error-panel">
+				<div class="row">
+					<div class="small-12 columns">
+			  		<h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+					</div>
 				</div>
-				<div class="small-1 column action-icons">
-					<%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_errorlog_path(errorlog) %>
-					<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, errorlog_path(errorlog), method: :delete %>
-				</div>
+			  <p>
+			  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, public_tag_path(t)}.each do |t| %>
+	        	<span class="[success alert secondary] label"><%= t %></span>
+	        <% end %>
+	      </p>
 			</div>
-		  <p>
-		  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
-        	<span class="[success alert secondary] label"><%= t %></span>
-        <% end %>
-      </p>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </div>

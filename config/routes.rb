@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'dashboard' => 'pages#dashboard'
   get 'dashboard/:tag', to: 'pages#dashboard', as: :tag
+  get 'errorlogs/tag/:public_tag', to: 'errorlogs#index', as: :public_tag
 
   resources :errorlogs do
     resources :solutions
