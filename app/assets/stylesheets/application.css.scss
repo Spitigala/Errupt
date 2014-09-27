@@ -25,12 +25,14 @@ body {
 }
 
 .top-bar {
-	background-color: black;
+	background-color: white;
 }
 
-.top-bar .name h1  {
-	color: white;
-	background-color: #CF000F;
+.top-bar .title-area .name h1 a {
+	color: #CF000F;
+	background-color: white;
+	font-family: Roboto;
+	font-size: 2em;
 	width: 165px;
 	text-align: center;
 }
@@ -73,11 +75,11 @@ body {
 	background-image: url("errupt-bg4.jpg")
 }
 
-.home-panel-content, h1 {
-	color: white;
-	background-color: black;
-	opacity: 0.8;
-}
+// .home-panel-content h1 {
+// 	color: white;
+// 	background-color: black;
+// 	opacity: 0.8;
+// }
 
 
 /* Dashboard */
@@ -113,6 +115,19 @@ body {
 
 .dash-error-panel {
 	background-color: white;
+	border-bottom: none;
+	margin-bottom: 0;
+	 box-shadow: 0;
+    transition: box-shadow 0.5s;
+    border: 1px solid #eee;
+}
+
+.dash-error-panel:hover {
+	background-color: #d8d8d8;
+	transition: background-color 0.8s;
+	// border: 2px solid #333;
+	box-shadow: 0 0 3px #515151;
+	// margin-bottom: 0;
 }
 
 .dash-error-panel p a {
@@ -132,6 +147,10 @@ body {
 
 .err-info p, a {
 	color: white;
+}
+
+.action-icons a {
+	color: #CF000F;
 }
 
 .container2 {

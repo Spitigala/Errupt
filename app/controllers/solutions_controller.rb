@@ -1,5 +1,6 @@
 class SolutionsController < ApplicationController
 	before_action :set_errorlog
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def new
 		@solution = Solution.new

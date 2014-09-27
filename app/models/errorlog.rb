@@ -29,7 +29,7 @@ class Errorlog < ActiveRecord::Base
     self.where(user_id: user_id).each do |error|
       all_tags << error.tags.map(&:tag_name)
     end
-    return all_tags.flatten!.uniq!.sort!
+    return all_tags.flatten!.uniq! if all_tags.count > 0
   end
 
   def self.unsolved(user_id)
