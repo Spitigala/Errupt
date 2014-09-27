@@ -1,7 +1,7 @@
 class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @public_errorlogs = Errorlog.where(public: true).order("created_at DESC")
+    @public_errorlogs = Errorlog.where(public: true).order("created_at DESC").paginate(per_page: 10, page: params[:page])
 
     if params[:public_tag]
       @public_errorlogs = @public_errorlogs.public_tagged_with(params[:public_tag])
