@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     else
       @user_errorlogs
     end
-
+    
     render layout: "dashboard_layout"
 
   end
