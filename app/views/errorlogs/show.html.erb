@@ -58,11 +58,13 @@
 	</div>
 <% end %>
 
-<div class="row">
-	<div class="small-9 columns solution-button">
-		<%= link_to "Add Solution", new_errorlog_solution_path(@errorlog), class: "button [tiny] green-button" %>
+<% if @errorlog.user == current_user %>
+	<div class="row">
+		<div class="small-9 columns solution-button">
+			<%= link_to "Add Solution", new_errorlog_solution_path(@errorlog), class: "button [tiny] green-button" %>
+		</div>
 	</div>
-</div>
+<% end %>
 
 <% @errorlog.solutions.each do |solution| %>
 	<% if solution.worked == true %>
