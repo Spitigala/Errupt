@@ -6,7 +6,10 @@ class ErrorlogsController < ApplicationController
 
   def show
     @errorlog = Errorlog.find(params[:id])
-    render layout: "dashboard_layout"
+    
+    if @errorlog.user == current_user
+      render layout: "dashboard_layout"
+    end
   end
 
   def new
