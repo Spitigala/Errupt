@@ -1,10 +1,10 @@
 <!-- Display WITH Image -->
 <% if @errorlog.image_file_name != nil %>
 	<div class="row">
-		<div class="small-9 columns title">
+		<div class="small-12 large-9 columns title">
 			<h2><%= @errorlog.title %></h2>
 		</div>
-		<div class="small-9 columns panel">
+		<div class="small-12 large-9 columns panel">
 			<%= image_tag @errorlog.image.url %>
 		</div>
 		<div class="small-3 columns panel desktop-only">
@@ -21,12 +21,11 @@
 	        <% end %>
 	      </p>
 			</div>
-			<p><%= link_to "Edit Error Log", edit_errorlog_path %></p>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="err-desc small-9 columns panel">
+		<div class="err-desc small-12 large-9 columns panel">
 			<%= simple_format(@errorlog.description) %>
 		</div>
 	</div>
@@ -52,7 +51,6 @@
           	<span class="[success alert secondary] label"><%= t %></span>
           <% end %>
         </p>
-				<p><%= link_to "Edit Error Log", edit_errorlog_path %></p>
 			</div>
 		</div>
 	</div>
@@ -61,6 +59,7 @@
 <% if @errorlog.user == current_user %>
 	<div class="row">
 		<div class="small-9 columns solution-button">
+			<%= link_to "Edit error", edit_errorlog_path, class: "button [tiny] green-button" %>
 			<%= link_to "Add Solution", new_errorlog_solution_path(@errorlog), class: "button [tiny] green-button" %>
 		</div>
 	</div>
@@ -69,15 +68,15 @@
 <% @errorlog.solutions.each do |solution| %>
 	<% if solution.worked == true %>
 		<div class="row">
-			<div class="small-9 columns panel callout worked-solution-desc">
+			<div class="small-12 large-9 columns panel callout worked-solution-desc">
 				<%= simple_format(solution.description) %>
 				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
 			</div>
 		</div>
 	<% else %>
 		<div class="row">
-			<div class="small-9 columns panel radius failed-solution-desc">
-				<%= solution.description %>
+			<div class="small-12 large-9 columns panel radius failed-solution-desc">
+				<%= simple_format(solution.description) %>
 				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
 			</div>
 		</div>
