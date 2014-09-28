@@ -28,6 +28,14 @@ body {
 	background-color: white;
 }
 
+.toggle-topbar {
+	background-color: black;
+}
+
+.top-bar-section ul li>a {
+  background-color: #CF000F;
+}
+
 .top-bar .title-area .name h1 a {
 	color: #CF000F;
 	background-color: white;
@@ -72,7 +80,7 @@ body {
 
 .home-panel {
 	height: 100%;
-	background-image: url("errupt-bg4.jpg")
+	background-image: url("squared_metal.png")
 }
 
 // .home-panel-content h1 {
@@ -88,6 +96,7 @@ body {
 	padding: 2% 0 0 0;
 	width: 12% !important;
 	background-color: #333333;
+	height: 75% !important;
 }
 
 .icon-bar > * {
@@ -109,6 +118,23 @@ body {
 	font-size: 1em;
 }
 
+.dash-err-title {
+		background-color: #CF000F;
+		margin-top: 2%;
+		// margin-bottom: 2%;
+		padding: 0.5%;
+}
+
+.dash-overview-title {
+	@extend .dash-err-title;
+	background-color: slategrey;
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .dashboard-content {
 	margin-right: 10%;
 }
@@ -116,7 +142,8 @@ body {
 .dash-error-panel {
 	background-color: white;
 	border-bottom: none;
-	margin-bottom: 0;
+	border-radius: 5px;
+	margin-bottom: 1%;
 	 box-shadow: 0;
     transition: box-shadow 0.5s;
     border: 1px solid #eee;
@@ -141,8 +168,8 @@ body {
 }
 
 .err-info {
-	background-color: black;
-	padding-left: 15px;
+	background-color: #777;
+	padding: 15px 0 10px 15px;
 }
 
 .err-info p, a {
@@ -155,29 +182,31 @@ body {
 
 .container2 {
 	background-color: #BDC3C7;
+	width: 41.8%;
+	float: right;
 }
 
 .circle-widget1 {
 	border-radius: 50%;
-	width: 210px;
-	height: 210px; 
-	background-color: #f1c40f;
+	width: 180px;
+	height: 180px; 
+	background-color: #D24D57;
 	border: 5px solid white;
 }
 
 .circle-widget2 {
 	border-radius: 50%;
-	width: 210px;
-	height: 210px; 
-	background-color: #36D7B7;
+	width: 180px;
+	height: 180px; 
+	background-color: #f1c40f;
 	border: 5px solid white;
 }
 
 .circle-widget1 h2, .circle-widget2 h2 {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
-	padding-top: 15%;
+	padding-top: 1%;
 	text-align: center;
 }
 
@@ -185,6 +214,7 @@ body {
 	font-size: 3em;
 	text-align: center;
 	color: white;
+	margin-bottom: 0;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -203,6 +233,9 @@ body {
 	text-align: center;
 }
 
+.top-title-bar {
+	margin-bottom: 0;
+}
 
 /* Errorlog show page */
 
