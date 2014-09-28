@@ -1,4 +1,4 @@
-<div class="dashboard-content small-9 columns">
+<div class="dashboard-content small-12 large-9 columns">
 	<div class="row">
 		<div class="dash-err-title small-12 large-6 columns">
 			<h3><i class="fa fa-list-ol"></i> Your Error Logs</h3>
@@ -9,67 +9,18 @@
 	</div>
 
 	<div class="row">
-
 		<div class="panel small-12 large-6 columns container1">
-			<% @user_errorlogs.each do |errorlog|%>
-				<div class="panel dash-error-panel">
-					<div class="row">
-						<div class="small-11 columns">
-				  		<h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
-						</div>
-						<div class="small-1 column action-icons">
-							<%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_errorlog_path(errorlog) %>
-							<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, errorlog_path(errorlog), method: :delete %>
-						</div>
-					</div>
-				  <p>
-				  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
-		        	<span class="[success alert secondary] label"><%= t %></span>
-		        <% end %>
-		      </p>
-				</div>
-			<% end %>
+			<%= render 'errorlog_list_widget' %>
 		</div>
 
 		<div class="panel large-6 columns container2 desktop-only">
-			<div class="row">
-				<div class="panel small-6 columns circle-widget1">
-					<p><%= @total_errors %></p>
-					<h2><i class="fa fa-exclamation-triangle"></i> Total Errors</h2>
-				</div>
-
-				<div class="panel small-6 columns circle-widget2">
-					<p><%= @unsolved_errors %></p>
-					<h2><i class="fa fa-times"></i> Unsolved</h2>
-				</div>
-			</div>
+			<%= render 'overview_widget' %>
 		</div>
 		
-		<div class="title small-5 small-offset-1 columns widget-title">
-			<h3><i class="fa fa-cloud"></i> Tag Cloud</h3>
-		</div>
-		<div class="panel large-6 columns container2 desktop-only">
-			<div class="row panel unique-tags-widget">
-				<p>
-					<% @unique_user_tags.each do |tag| %>
-						<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
-					<% end %>
-				</p>
-			</div>
-		</div>
+		<%= render 'taglist_widget' %>
 
-		<div class="title small-5 small-offset-1 columns widget-title">
-			<h3><i class="fa fa-cloud"></i> Errorlog Stats</h3>
-		</div>
-		<div class="panel large-6 columns container2 desktop-only">
-				<%= content_tag "div", id: "tag_chart", data: {tags: @tagcount} do %>
-					
-				<% end %>
-		</div>
+		<%= render 'errorlog_piechart_widget' %>
 	</div>
 </div>
-
-
-<script type="text/javascript" src="chart.js"></script>
 
 

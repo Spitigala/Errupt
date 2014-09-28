@@ -1,0 +1,15 @@
+<% if @unique_user_tags != nil %>
+	<div class="title small-5 small-offset-1 columns widget-title">
+		<h3><i class="fa fa-cloud"></i> Tag Cloud</h3>
+	</div>
+	
+	<div class="panel large-6 columns container2 desktop-only">
+		<div class="row panel unique-tags-widget">
+			<p>
+				<% @unique_user_tags.each do |tag| %>
+					<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
+				<% end %>
+			</p>
+		</div>
+	</div>
+<% end %>
