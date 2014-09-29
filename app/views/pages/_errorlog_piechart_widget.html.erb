@@ -1,11 +1,7 @@
 <% unless @tagcount.empty? %>
-	<div class="title small-5 small-offset-1 columns widget-title">
-		<h3><i class="fa fa-cloud"></i> Errorlog Stats</h3>
-	</div>
-	<div class="panel large-6 columns container2 desktop-only">
+	<div class="small-12 columns desktop-only">
 		<%= content_tag "div", id: "tag_chart", data: {tags: @tagcount} do %>	
 		<% end %>
 	</div>
 <% end %>
-
-<script type="text/javascript" src="chart.js"></script>
+<!-- <script type="text/javascript" src="chart.js"></script> -->
