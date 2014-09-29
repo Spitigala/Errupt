@@ -55,7 +55,7 @@ class ErrorlogsController < ApplicationController
   def destroy
     @errorlog = Errorlog.find(params[:id])
     @errorlog.delete
-    redirect_to errorlogs_path
+    redirect_to dashboard_path
   end
 
   private
