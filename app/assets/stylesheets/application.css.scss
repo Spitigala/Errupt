@@ -63,6 +63,10 @@ body {
 	background-color: #2ECC71;
 }
 
+.lightgreen-button {
+	background-color: #1abc9c;
+}
+
 .title {
 	background-color: #CF000F;
 	margin-top: 2%;
@@ -70,24 +74,99 @@ body {
 	padding: 0.5%;
 }
 
-.title h2, h3 {
+.title h2, h3, h4 {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 }
 
+.footer {
+	background-color: white;
+	border-top: 2px solid #ccc;
+	height: 7%;
+	padding: 1% 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
 
 /* Home Page */
 
 .home-panel {
-	height: 100%;
-	background-image: url("squared_metal.png")
+	height: 600px;
+	background-image: url("errupt-home-image2.jpg");
+	background-size:   cover;                      /* <------ */
+	background-repeat: no-repeat;
+	background-position: center center; 
 }
 
-// .home-panel-content h1 {
-// 	color: white;
-// 	background-color: black;
-// 	opacity: 0.8;
-// }
+.home-panel-content {
+	padding-left: 3%;
+	padding-top: 3%;
+}
+
+.home-panel-headtext {
+	width: 50%;
+	background-color: white;
+}
+
+.home-panel-headtext h1 {
+	font-size: 4em;
+	color: #6C7A89;
+	padding-left: 1%;
+}
+
+.home-panel-subtext {
+	background-color: #D24D57;
+	width: 50%;
+}
+
+.home-panel-subtext p {
+	font-size: 1.5em;
+	padding-left: 1%;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+#about1 {
+	// height: 1000px;
+}
+
+.errupt-screenshot {
+
+}
+
+.intro-message {
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ccc;
+	border-right: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+	padding: 5%;
+}
+
+.intro-message h4, h5{
+	font-size: 1.2em;
+	color: black;
+}
+
+.intro-message h5 {
+	margin-top: 5%;
+}
+
+
+
+.intro-message p {
+	margin-top: 5%;
+	color: #666;
+}
+
+
+.intro-message ul {
+	list-style: none;
+}
+
+.intro-message ul li {
+	margin-top: 3%;
+}
 
 
 /* Dashboard */
@@ -111,11 +190,15 @@ body {
 
 .item:hover {
 	background-color: black;
-	border-left: 3px solid #19B5FE;
+	border-left: 3px solid #E67E22;
 }
 
 .item i {
 	font-size: 1em;
+}
+
+.account-form a {
+	color: black;
 }
 
 .dash-err-title {
@@ -125,7 +208,11 @@ body {
 		padding: 0.5%;
 }
 
-.dash-overview-title {
+.dash-err-title h3 {
+	margin-left: 4%;
+}
+
+.dash-widget-title {
 	@extend .dash-err-title;
 	background-color: slategrey;
 }
@@ -144,9 +231,9 @@ body {
 	border-bottom: none;
 	border-radius: 5px;
 	margin-bottom: 1%;
-	 box-shadow: 0;
-    transition: box-shadow 0.5s;
-    border: 1px solid #eee;
+	box-shadow: 0;
+  transition: box-shadow 0.5s;
+  border: 1px solid #eee;
 }
 
 .dash-error-panel:hover {
@@ -163,8 +250,16 @@ body {
 }
 
 .dash-error-panel h5 a{
-	color: #CF000F;
-	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-family: 'Roboto', sans-serif;
+}
+
+.with-solution i {
+	color: #049372;
+}
+
+.no-solution i {
+	color: #f1c40f;
 }
 
 .err-info {
@@ -223,7 +318,7 @@ body {
 }
 
 .unique-tags-widget {
-	background-color: #6BB9F0;
+	background-color: #BDC3C7;
 	border: 5px solid white;
 }
 
@@ -235,6 +330,13 @@ body {
 
 .top-title-bar {
 	margin-bottom: 0;
+}
+
+.dash-overview, .dash-taglist, .dash-chart {
+	border-bottom: 4px solid #ccc;
+	border-right: 4px solid #ccc;
+	// box-shadow: 0 0 3px #515151;
+	// padding: 5%;
 }
 
 /* Errorlog show page */
