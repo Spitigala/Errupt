@@ -2,7 +2,11 @@
 	<div class="panel dash-error-panel">
 		<div class="row">
 			<div class="small-11 columns">
-	  		<h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+				<% if errorlog.solutions.count == 0 %>
+	  		<h5 class="no-solution"><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+	  		<% else %>
+	  		<h5 class="with-solution"><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+	  		<% end %>
 			</div>
 			<div class="small-1 column action-icons">
 				<%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_errorlog_path(errorlog) %>
