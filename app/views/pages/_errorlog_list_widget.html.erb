@@ -1,0 +1,22 @@
+<% @user_errorlogs.each do |errorlog|%>
+	<div class="panel dash-error-panel">
+		<div class="row">
+			<div class="small-11 columns">
+				<% if errorlog.solutions.count == 0 %>
+	  		<h5 class="no-solution"><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+	  		<% else %>
+	  		<h5 class="with-solution"><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+	  		<% end %>
+			</div>
+			<div class="small-1 column action-icons">
+				<%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_errorlog_path(errorlog) %>
+				<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, errorlog_path(errorlog), method: :delete %>
+			</div>
+		</div>
+	  <p>
+	  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
+      	<span class="[success alert secondary] label"><%= t %></span>
+      <% end %>
+    </p>
+	</div>
+<% end %>

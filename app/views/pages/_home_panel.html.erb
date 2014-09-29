@@ -1,0 +1,18 @@
+<div class="home-panel">
+	<div class="home-panel-content">
+		<div class="home-panel-headtext">
+			<h1>Log more. Search less.</h1>
+		</div>
+
+		<div class="home-panel-subtext">
+			<p>KEEP A LOG OF ERRORS AND SOLUTIONS DURING DEVELOPMENT.</p>
+			<p>YOUR FUTURE SELF WILL THANK YOU.</p>
+		</div>
+
+		<% if user_signed_in? %>
+		<% else %>
+			<a href="<%= new_user_registration_path %>" class="button">Sign Up</a>
+			<a href="#about" class="button lightgreen-button">Learn More</a>
+		<% end %>
+	</div>
+</div>

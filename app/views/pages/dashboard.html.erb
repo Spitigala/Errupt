@@ -1,41 +1,38 @@
-<div class="dashboard-content small-9 columns">
-	<div class="title">
-		<h3>Your Error Logs</h3>
-	</div>
-
-	<div class="panel small-12 large-6 columns container1">
-		<% @user_errorlogs.each do |errorlog|%>
-			<div class="panel dash-error-panel">
-			  <h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
-			  <p>
-			  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
-	        	<span class="[success alert secondary] label"><%= t %></span>
-	        <% end %>
-	      </p>
+<div class="dashboard-content small-12 large-9 columns">
+	<div class="row">
+		<div class="small-12 large-6 columns">
+			<div class="dash-err-title small-12 columns">
+				<h3><i class="fa fa-list-ol"></i> Your Error Logs</h3>
 			</div>
-		<% end %>
-	</div>
-
-	<div class="panel large-6 columns container2 desktop-only">
-		<div class="row">
-			<div class="panel small-6 columns circle-widget1">
-				<h2><i class="fa fa-exclamation-triangle"></i> Total Errors</h2>
-				<p><%= @total_errors %></p>
-			</div>
-
-			<div class="panel small-6 columns circle-widget2">
-				<h2><i class="fa fa-times"></i> Unsolved</h2>
-				<p><%= @unsolved_errors %></p>
+			<div class="panel large-12 columns dash-errlogs">
+				<%= render 'errorlog_list_widget' %>
 			</div>
 		</div>
-		
-		<div class="row panel unique-tags-widget">
-			<h2><i class="fa fa-cloud"></i> Tag Cloud</h2>
-			<p>
-				<% @unique_user_tags.each do |tag| %>
-					<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
-				<% end %>
-			</p>
+
+		<div class="small-6 columns">
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-binoculars"></i> Overview</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-overview desktop-only">
+				<%= render 'overview_widget' %>
+			</div>
+
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-pie-chart"></i> Errorlog Stats</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-chart desktop-only">
+				<%= render 'errorlog_piechart_widget' %>
+			</div>
+
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-cloud"></i> Tags</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-taglist desktop-only">
+				<%= render 'taglist_widget' %>
+			</div>
 		</div>
 	</div>
 </div>

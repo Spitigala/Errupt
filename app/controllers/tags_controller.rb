@@ -7,7 +7,6 @@ class TagsController < ApplicationController
 	def create
 		@tag = Tag.new(tag_params)
 		if @tag.save
-			# @error_tag = ErrorTag.create(errorlog_id: @errorlog.id, tag_id: @tag.id)
 			flash[:success] = "Tag was created!"
 			redirect_to tag_path(@tag)
 		else

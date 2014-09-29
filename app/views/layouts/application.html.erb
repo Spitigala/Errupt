@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "vendor/modernizr" %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -15,10 +14,14 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
 		<%= render "layouts/header" %>
-    <%= yield %>
+    <%= yield %> 
+    <div class="footer">
+      <p>All Content ©2014 Errupt || contact: sahan.pitigala@gmail.com</p>
+    </div>
   </body>
 </html>

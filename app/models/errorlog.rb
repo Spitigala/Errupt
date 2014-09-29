@@ -13,6 +13,28 @@ class Errorlog < ActiveRecord::Base
 	def self.tagged_with(tag_name)
     Tag.find_by_tag_name!(tag_name).errorlogs
   end
+
+  def self.public_tagged_with(tag_name)
+    Tag.find_by_tag_name!(tag_name).errorlogs.where(public: true)
+  end
+
+  def self.tag_counts(user_id)
+    tag_collection = []
+    tags_and_count = {}
+    errors = self.where(user_id: user_id)
+
+    errors.each do |errorlog|
+      tag_collection << errorlog.tags
+    end
+
+    tag_collection.flatten!
+
+    tag_collection.uniq.each do |tag|
+      tags_and_count[tag.tag_name] = tag_collection.count(tag)
+    end
+    
+    return tags_and_count
+  end
   
   def tag_list
     tags.map(&:tag_name).join(", ")
@@ -29,7 +51,7 @@ class Errorlog < ActiveRecord::Base
     self.where(user_id: user_id).each do |error|
       all_tags << error.tags.map(&:tag_name)
     end
-    return all_tags.flatten!.uniq!.sort!
+    return all_tags.flatten!.uniq if all_tags.count > 0
   end
 
   def self.unsolved(user_id)

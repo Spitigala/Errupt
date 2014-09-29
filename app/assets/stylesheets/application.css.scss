@@ -25,12 +25,22 @@ body {
 }
 
 .top-bar {
+	background-color: white;
+}
+
+.toggle-topbar {
 	background-color: black;
 }
 
-.top-bar .name h1  {
-	color: white;
-	background-color: #CF000F;
+.top-bar-section ul li>a {
+  background-color: #CF000F;
+}
+
+.top-bar .title-area .name h1 a {
+	color: #CF000F;
+	background-color: white;
+	font-family: Roboto;
+	font-size: 2em;
 	width: 165px;
 	text-align: center;
 }
@@ -53,6 +63,10 @@ body {
 	background-color: #2ECC71;
 }
 
+.lightgreen-button {
+	background-color: #1abc9c;
+}
+
 .title {
 	background-color: #CF000F;
 	margin-top: 2%;
@@ -60,23 +74,98 @@ body {
 	padding: 0.5%;
 }
 
-.title h2, h3 {
+.title h2, h3, h4 {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 }
 
+.footer {
+	background-color: white;
+	border-top: 2px solid #ccc;
+	height: 7%;
+	padding: 1% 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
 
 /* Home Page */
 
 .home-panel {
-	height: 100%;
-	background-image: url("errupt-bg4.jpg")
+	height: 600px;
+	background-image: url("errupt-home-image2.jpg");
+	background-size:   cover;                      /* <------ */
+	background-repeat: no-repeat;
+	background-position: center center; 
 }
 
-.home-panel-content, h1 {
+.home-panel-content {
+	padding-left: 3%;
+	padding-top: 3%;
+}
+
+.home-panel-headtext {
+	width: 50%;
+	background-color: white;
+}
+
+.home-panel-headtext h1 {
+	font-size: 4em;
+	color: #6C7A89;
+	padding-left: 1%;
+}
+
+.home-panel-subtext {
+	background-color: #D24D57;
+	width: 50%;
+}
+
+.home-panel-subtext p {
+	font-size: 1.5em;
+	padding-left: 1%;
 	color: white;
-	background-color: black;
-	opacity: 0.8;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+#about1 {
+	// height: 1000px;
+}
+
+.errupt-screenshot {
+
+}
+
+.intro-message {
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ccc;
+	border-right: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+	padding: 5%;
+}
+
+.intro-message h4, h5{
+	font-size: 1.2em;
+	color: black;
+}
+
+.intro-message h5 {
+	margin-top: 5%;
+}
+
+
+
+.intro-message p {
+	margin-top: 5%;
+	color: #666;
+}
+
+
+.intro-message ul {
+	list-style: none;
+}
+
+.intro-message ul li {
+	margin-top: 3%;
 }
 
 
@@ -86,6 +175,7 @@ body {
 	padding: 2% 0 0 0;
 	width: 12% !important;
 	background-color: #333333;
+	height: 75% !important;
 }
 
 .icon-bar > * {
@@ -100,11 +190,36 @@ body {
 
 .item:hover {
 	background-color: black;
-	border-left: 3px solid #19B5FE;
+	border-left: 3px solid #E67E22;
 }
 
 .item i {
 	font-size: 1em;
+}
+
+.account-form a {
+	color: black;
+}
+
+.dash-err-title {
+		background-color: #CF000F;
+		margin-top: 2%;
+		// margin-bottom: 2%;
+		padding: 0.5%;
+}
+
+.dash-err-title h3 {
+	margin-left: 4%;
+}
+
+.dash-widget-title {
+	@extend .dash-err-title;
+	background-color: slategrey;
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .dashboard-content {
@@ -113,6 +228,20 @@ body {
 
 .dash-error-panel {
 	background-color: white;
+	border-bottom: none;
+	border-radius: 5px;
+	margin-bottom: 1%;
+	box-shadow: 0;
+  transition: box-shadow 0.5s;
+  border: 1px solid #eee;
+}
+
+.dash-error-panel:hover {
+	background-color: #d8d8d8;
+	transition: background-color 0.8s;
+	// border: 2px solid #333;
+	box-shadow: 0 0 3px #515151;
+	// margin-bottom: 0;
 }
 
 .dash-error-panel p a {
@@ -121,44 +250,58 @@ body {
 }
 
 .dash-error-panel h5 a{
-	color: #CF000F;
-	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-family: 'Roboto', sans-serif;
+}
+
+.with-solution i {
+	color: #049372;
+}
+
+.no-solution i {
+	color: #f1c40f;
 }
 
 .err-info {
-	background-color: black;
-	padding-left: 15px;
+	background-color: #777;
+	padding: 15px 0 10px 15px;
 }
 
 .err-info p, a {
 	color: white;
 }
 
+.action-icons a {
+	color: #CF000F;
+}
+
 .container2 {
 	background-color: #BDC3C7;
+	width: 41.8%;
+	float: right;
 }
 
 .circle-widget1 {
 	border-radius: 50%;
-	width: 210px;
-	height: 210px; 
-	background-color: #f1c40f;
+	width: 180px;
+	height: 180px; 
+	background-color: #D24D57;
 	border: 5px solid white;
 }
 
 .circle-widget2 {
 	border-radius: 50%;
-	width: 210px;
-	height: 210px; 
-	background-color: #36D7B7;
+	width: 180px;
+	height: 180px; 
+	background-color: #f1c40f;
 	border: 5px solid white;
 }
 
 .circle-widget1 h2, .circle-widget2 h2 {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
-	padding-top: 15%;
+	padding-top: 1%;
 	text-align: center;
 }
 
@@ -166,6 +309,7 @@ body {
 	font-size: 3em;
 	text-align: center;
 	color: white;
+	margin-bottom: 0;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -174,7 +318,7 @@ body {
 }
 
 .unique-tags-widget {
-	background-color: #6BB9F0;
+	background-color: #BDC3C7;
 	border: 5px solid white;
 }
 
@@ -184,6 +328,16 @@ body {
 	text-align: center;
 }
 
+.top-title-bar {
+	margin-bottom: 0;
+}
+
+.dash-overview, .dash-taglist, .dash-chart {
+	border-bottom: 4px solid #ccc;
+	border-right: 4px solid #ccc;
+	// box-shadow: 0 0 3px #515151;
+	// padding: 5%;
+}
 
 /* Errorlog show page */
 

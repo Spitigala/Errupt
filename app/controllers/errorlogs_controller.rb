@@ -1,12 +1,21 @@
 class ErrorlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @public_errorlogs = Errorlog.where(public: true).order("created_at DESC")
+    @public_errorlogs = Errorlog.where(public: true).order("created_at DESC").paginate(per_page: 10, page: params[:page])
+
+    if params[:public_tag]
+      @public_errorlogs = @public_errorlogs.public_tagged_with(params[:public_tag])
+    else
+      @public_errorlogs
+    end
   end
 
   def show
     @errorlog = Errorlog.find(params[:id])
-    render layout: "dashboard_layout"
+    
+    if @errorlog.user == current_user
+      render layout: "dashboard_layout"
+    end
   end
 
   def new
@@ -46,7 +55,7 @@ class ErrorlogsController < ApplicationController
   def destroy
     @errorlog = Errorlog.find(params[:id])
     @errorlog.delete
-    redirect_to errorlogs_path
+    redirect_to dashboard_path
   end
 
   private

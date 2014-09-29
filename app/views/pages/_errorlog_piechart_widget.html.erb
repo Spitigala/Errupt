@@ -1,0 +1,7 @@
+<% unless @tagcount.empty? %>
+	<div class="small-12 columns desktop-only">
+		<%= content_tag "div", id: "tag_chart", data: {tags: @tagcount} do %>	
+		<% end %>
+	</div>
+<% end %>
+<!-- <script type="text/javascript" src="chart.js"></script> -->
