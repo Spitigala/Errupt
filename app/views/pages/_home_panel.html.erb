@@ -9,10 +9,12 @@
 			<p>YOUR FUTURE SELF WILL THANK YOU.</p>
 		</div>
 
-		<% if user_signed_in? %>
-		<% else %>
-			<a href="<%= new_user_registration_path %>" class="button">Sign Up</a>
-			<a href="#about" class="button lightgreen-button">Learn More</a>
-		<% end %>
+		<div class="desktop-only">
+			<% if user_signed_in? %>
+			<% else %>
+				<a href="<%= new_user_registration_path %>" class="button">Sign Up</a>
+				<a href="#about" class="button lightgreen-button">Learn More</a>
+			<% end %>
+		</div>
 	</div>
 </div>
