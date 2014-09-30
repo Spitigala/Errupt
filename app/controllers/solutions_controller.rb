@@ -42,7 +42,7 @@ class SolutionsController < ApplicationController
 	def destroy
 		@solution = Solution.find(params[:id])
 		@solution.delete
-		redirect_to errorlog_path
+		redirect_to errorlog_path(@errorlog)
 	end
 
 	private

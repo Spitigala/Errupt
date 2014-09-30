@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<%= form_for(@solution, url: errorlog_solutions_path(@errorlog), :method => :update) do |f| %>
+<%= form_for(@solution, url: errorlog_solutions_path(@errorlog, @solution), :method => :update) do |f| %>
 	<div class="row">
 	  <div class="large-12 columns">
 	    <%= f.label :description %>
