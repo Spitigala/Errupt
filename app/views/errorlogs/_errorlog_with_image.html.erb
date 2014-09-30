@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="small-12 large-9 columns title">
+		<h4><%= @errorlog.title %></h4>
+	</div>
+	<div class="small-12 large-9 columns panel">
+		<%= image_tag @errorlog.image.url %>
+	</div>
+	<div class="small-3 columns panel desktop-only">
+		<div class="err-info">
+			<p>OS: <%= @errorlog.os %></p>
+			<p>OS Version: <%= @errorlog.os_version %></p>
+			<p>Language: <%= @errorlog.language %></p>
+			<p>Language Version: <%= @errorlog.language_version %></p>
+			<p>Framework: <%= @errorlog.framework %></p>
+			<p>Framework Version: <%= @errorlog.framework_version %></p>
+		  <p>
+		  	<% @errorlog.tags.map(&:tag_name).map {|t| link_to t, tag_path(t)}.each do |t| %>
+        	<span class="[success alert secondary] label"><%= t %></span>
+        <% end %>
+      </p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="err-desc small-12 large-9 columns panel">
+		<%= simple_format(@errorlog.description) %>
+	</div>
+</div>

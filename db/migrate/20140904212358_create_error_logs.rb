@@ -3,7 +3,6 @@ class CreateErrorLogs < ActiveRecord::Migration
     create_table :errorlogs do |t|
 
       t.belongs_to :user
-      # t.belongs_to :ErrorTag
     	t.string :title, null: false
     	t.text :description, null: false
     	t.string :os
