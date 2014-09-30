@@ -32,7 +32,7 @@ class SolutionsController < ApplicationController
 		@solution = Solution.find(params[:id])
 		if @solution.update(solution_params)
 			flash[:success] = "Solution successfully updated!"
-			redirect_to errorlog_solution_path(@errorlog, @solution)
+			redirect_to errorlog_path(@errorlog.id)
 		else
 			flash.now.alert = "There was an error with updating this Solution."
 			render 'edit'
