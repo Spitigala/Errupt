@@ -1,19 +1,38 @@
-<h2><%= @errorlog.title %></h2>
-<div class="screenshot">
+<!-- Display WITH Image -->
 <% if @errorlog.image_file_name != nil %>
-	<%= image_tag @errorlog.image.url %>
+	<%= render 'errorlog_with_image' %>
+<% else %>
+<!-- Display WITHOUT Image -->
+	<%= render 'errorlog_without_image' %>
 <% end %>
-</div>
 
-<div class="err-desc">
-	<%= @errorlog.description %>
-</div>
+<% if @errorlog.user == current_user %>
+	<div class="row">
+		<div class="small-9 columns solution-button">
+			<%= link_to "Edit error", edit_errorlog_path, class: "button [tiny] green-button" %>
+			<%= link_to "Add Solution", new_errorlog_solution_path(@errorlog), class: "button [tiny] green-button" %>
+		</div>
+	</div>
+<% end %>
 
-<div class="err-info">
-	<p><%= @errorlog.os %></p>
-	<p><%= @errorlog.os_version %></p>
-	<p><%= @errorlog.language %></p>
-	<p><%= @errorlog.language_version %></p>
-	<p><%= @errorlog.framework %></p>
-	<p><%= @errorlog.framework_version %></p>
-</div>
+<% @errorlog.solutions.each do |solution| %>
+	<% if solution.worked == true %>
+		<div class="row">
+			<h3 class="solution-title">Solutions</h3>
+			<div class="small-12 large-9 columns panel callout worked-solution-desc">
+				<%= simple_format(solution.description) %>
+				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
+			</div>
+		</div>
+	<% else %>
+		<div class="row">
+			<div class="small-12 large-9 columns panel radius failed-solution-desc">
+				<%= simple_format(solution.description) %>
+				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
+			</div>
+		</div>
+	<% end %>
+<% end %>
+
+
+

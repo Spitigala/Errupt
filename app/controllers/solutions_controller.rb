@@ -1,8 +1,10 @@
 class SolutionsController < ApplicationController
 	before_action :set_errorlog
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def new
 		@solution = Solution.new
+		render layout: "dashboard_layout"
 	end
 
 	def create
@@ -23,6 +25,7 @@ class SolutionsController < ApplicationController
 
 	def edit
 		@solution = Solution.find(params[:id])
+		render layout: "dashboard_layout"
 	end
 
 	def update

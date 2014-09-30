@@ -32,6 +32,15 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -78,7 +87,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   #change to host
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'http://infinite-lake-6652.herokuapp.com/' }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

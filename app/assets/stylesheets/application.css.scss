@@ -1,0 +1,396 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+
+/* Layout */
+
+$red: #CF000F;
+$open-sans: 'Open Sans', sans-serif;
+$menlo: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+body {
+	background-color: #DADFE1;
+	font-family: $open-sans;
+}
+
+.top-bar {
+	background-color: white;
+}
+
+.toggle-topbar {
+	background-color: black;
+}
+
+.top-bar-section ul li>a {
+  background-color: $red;
+}
+
+.top-bar .title-area .name h1 a {
+	color: $red;
+	background-color: white;
+	font-family: Roboto;
+	font-size: 2em;
+	width: 165px;
+	text-align: center;
+}
+
+@media (max-width: 991px) {
+  .mobile-only {
+      display:block !important;
+  }
+
+  .desktop-only {
+      display:none !important;
+  }
+}
+
+.red-button {
+	background-color: $red;
+}
+
+.green-button {
+	background-color: #2ECC71;
+}
+
+.lightgreen-button {
+	background-color: #1abc9c;
+}
+
+.title {
+	background: rgb(169,3,41); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 0.5%;
+	text-align: center;
+}
+
+.title h2, h3, h4 {
+	color: white;
+	font-family: $open-sans;
+}
+
+.footer {
+	background-color: white;
+	border-top: 2px solid #ccc;
+	height: 7%;
+	padding: 1% 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+/* Home Page */
+
+.home-panel {
+	height: 600px;
+	background-image: url("errupt-home-image2.jpg");
+	background-size:   cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.home-panel-content {
+	padding-left: 3%;
+	padding-top: 5%;
+}
+
+.home-panel-headtext {
+	width: 50%;
+	background-color: white;
+}
+
+.home-panel-headtext h1 {
+	font-size: 4em;
+	color: #6C7A89;
+	padding-left: 1%;
+}
+
+.home-panel-subtext {
+	background-color: #D24D57;
+	width: 45%;
+}
+
+.home-panel-subtext p {
+	font-size: 1.3em;
+	padding-left: 1%;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.intro-message {
+	background-color: #f7f7f7;
+	border-right: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+	padding-top: 5%;
+}
+
+.intro-message h4, h5{
+	font-size: 1.2em;
+	color: black;
+}
+
+.intro-message h5 {
+	margin-top: 5%;
+}
+
+.intro-message h3 {
+	color: black;
+	margin-top: 50%;
+}
+
+.intro-message p {
+	margin-top: 5%;
+	color: #666;
+}
+
+
+.intro-message ul {
+	list-style: none;
+}
+
+.intro-message ul li {
+	margin-top: 3%;
+}
+
+
+/* Dashboard */
+
+.icon-bar {
+	padding: 2% 0 0 0;
+	width: 12% !important;
+	background-color: #333333;
+	height: 75% !important;
+}
+
+.icon-bar > * {
+	text-align: left;
+}
+
+.item {
+	border-left: 3px solid #CF000F;
+	margin-top: 10px !important;
+}
+
+
+.item:hover {
+	background-color: black;
+	border-left: 3px solid #E67E22;
+}
+
+.item i {
+	font-size: 1em;
+}
+
+.account-form a {
+	color: black;
+}
+
+.dash-err-title {
+	background: rgb(169,3,41); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+	margin-top: 2%;
+	padding: 0.5%;
+}
+
+.dash-err-title h3 {
+	margin-left: 4%;
+}
+
+.dash-widget-title {
+	@extend .dash-err-title;
+	background: rgb(96,108,136); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(96,108,136,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.dashboard-content {
+	margin-right: 10%;
+}
+
+.dash-error-panel {
+	background-color: white;
+	border-bottom: none;
+	border-radius: 3px;
+	margin-bottom: 1%;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+	// box-shadow: 0;
+  // transition: box-shadow 0.5s;
+  // border: 1px solid #eee;
+}
+
+.dash-error-panel:hover {
+	background-color: #d8d8d8;
+	transition: background-color 0.8s;
+	box-shadow: 0 0 3px #515151;
+}
+
+.dash-error-panel p a {
+	color: white;
+	font-family: $open-sans;
+}
+
+.dash-error-panel h5 a{
+	color: #333;
+	font-size: 0.7em;
+	font-family: 'Roboto', sans-serif;
+}
+
+.dash-error-panel {
+	padding-top: 0.5rem;
+	padding-bottom: 1rem;
+}
+
+.with-solution i {
+	color: #049372;
+}
+
+.no-solution i {
+	color: #f1c40f;
+}
+
+.err-info {
+	background-color: #777;
+	padding: 15px 0 10px 15px;
+}
+
+.err-info p, a {
+	color: white;
+}
+
+.action-icons a {
+	color: #CF000F;
+}
+
+.container2 {
+	background-color: #BDC3C7;
+	width: 41.8%;
+	float: right;
+}
+
+.circle-widget1 {
+	border-radius: 50%;
+	width: 180px;
+	height: 180px; 
+	background-color: #D24D57;
+	border: 5px solid white;
+}
+
+.circle-widget2 {
+	border-radius: 50%;
+	width: 180px;
+	height: 180px; 
+	background-color: #f1c40f;
+	border: 5px solid white;
+}
+
+.circle-widget1 h2, .circle-widget2 h2 {
+	font-size: 1.2em;
+	font-family: $open-sans;
+	color: white;
+	padding-top: 1%;
+	text-align: center;
+}
+
+.circle-widget1 p, .circle-widget2 p {
+	font-size: 3em;
+	text-align: center;
+	color: white;
+	margin-bottom: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.unique-tags-widget a {
+	color: white !important;
+}
+
+.unique-tags-widget {
+	background-color: #BDC3C7;
+	border: 5px solid white;
+}
+
+.unique-tags-widget h2 {
+	font-size: 1.5em;
+	font-family: $open-sans;
+	text-align: center;
+}
+
+.top-title-bar {
+	margin-bottom: 0;
+}
+
+.dash-overview, .dash-taglist, .dash-chart {
+	border-bottom: 4px solid #ccc;
+}
+
+/* Errorlog show page */
+
+.err-desc {
+	font-family: $menlo;
+}
+
+
+/* Solution */
+
+.solution-button {
+	padding: 0;
+}
+
+.worked-solution-desc {
+	background-color: #2ABB9B;
+	font-family: $menlo;
+}
+
+.failed-solution-desc {
+	background-color: #F9BF3B;
+	font-family: $menlo;
+}
+
+.solution-title {
+	color: black;
+}

@@ -1,4 +1,6 @@
 require 'rails_helper'
+# temporarily comment out authenticate in solutions controller before running test.
+# add authentication bypass to fix this.
 
 describe SolutionsController do
 

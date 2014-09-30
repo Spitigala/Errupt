@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require pages.js.coffee
+//= require foundation
 //= require turbolinks
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

@@ -1,1 +1,28 @@
-<p>Testing error logs index page</p>
+<div class="row">
+	<div class="title small-12 columns">
+		<h3>Public Error Logs</h3>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel small-12 columns container1">
+		<% @public_errorlogs.each do |errorlog|%>
+			<div class="panel dash-error-panel">
+				<div class="row">
+					<div class="small-9 columns">
+			  		<h5><i class="fa fa-exclamation-triangle"></i> <%= link_to errorlog.title, errorlog_path(errorlog) %></h5>
+					</div>
+					<div class="small-3 column action-icons">
+						<p>Posted by: <%= errorlog.user.username %></p>
+					</div>
+				</div>
+			  <p>
+			  	<% raw errorlog.tags.map(&:tag_name).map {|t| link_to t, public_tag_path(t)}.each do |t| %>
+	        	<span class="[success alert secondary] label"><%= t %></span>
+	        <% end %>
+	      </p>
+			</div>
+		<% end %>
+		<%= will_paginate @public_errorlogs %>
+	</div>
+</div>

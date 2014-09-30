@@ -1,10 +1,39 @@
-<p><%= current_user.firstname.capitalize %>'s Dashboard</p>
+<div class="dashboard-content small-12 large-9 columns">
+	<div class="row">
+		<div class="small-12 large-6 columns">
+			<div class="dash-err-title small-12 columns">
+				<h3><i class="fa fa-list-ol"></i> Your Error Logs</h3>
+			</div>
+			<div class="panel large-12 columns dash-errlogs">
+				<%= render 'errorlog_list_widget' %>
+			</div>
+		</div>
 
-<div>
-	<h3>Your Error Logs</h3>
-	<% current_user.errorlogs.each do |errorlog|%>
-	<%= link_to errorlog.title, errorlog_path(errorlog) %>
-	<% end %>
+		<div class="small-6 columns">
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-binoculars"></i> Overview</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-overview desktop-only">
+				<%= render 'overview_widget' %>
+			</div>
+
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-pie-chart"></i> Errorlog Stats</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-chart desktop-only">
+				<%= render 'errorlog_piechart_widget' %>
+			</div>
+
+			<div class="dash-widget-title small-12 columns desktop-only">
+				<h3><i class="fa fa-cloud"></i> Tags</h3>
+			</div>
+
+			<div class="panel large-12 columns dash-taglist desktop-only">
+				<%= render 'taglist_widget' %>
+			</div>
+		</div>
+	</div>
 </div>
 
-<%= link_to "Create new Error Log", new_errorlog_path %>

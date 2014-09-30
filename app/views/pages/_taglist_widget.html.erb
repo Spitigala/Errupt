@@ -1,0 +1,9 @@
+<% if @unique_user_tags != nil %>	
+	<div class="row panel unique-tags-widget desktop-only">
+		<p>
+			<% @unique_user_tags.each do |tag| %>
+				<span class="[success alert secondary] label"><%= link_to "#{tag}", tag_path(tag) %></span>
+			<% end %>
+		</p>
+	</div>
+<% end %>
