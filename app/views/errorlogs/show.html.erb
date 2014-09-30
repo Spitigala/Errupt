@@ -29,6 +29,7 @@
 			<div class="small-12 large-9 columns panel radius failed-solution-desc">
 				<%= simple_format(solution.description) %>
 				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
+				<%= link_to "Delete Solution", errorlog_solution_path(@errorlog, solution), method: :delete %>
 			</div>
 		</div>
 	<% end %>
