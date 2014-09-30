@@ -1,4 +1,4 @@
-## welcome to {Errupt}[http://infinite-lake-6652.herokuapp.com/].
+## welcome to [Errupt](http://infinite-lake-6652.herokuapp.com/).
 
 
 As developers, we often run in to errors, and it's our job to figure out how to fix it. We may spend minute, hours, or even days trying to fix one error, losing some hairs and tempers along the way. The routine is almost always the same. If we can't pinpoint the solution to an error right away, we usually try some assumptions, google for the error, or if we're lucky, ask another dev buddy if they have any idea how to fix it.
@@ -9,7 +9,7 @@ Enter Errupt.
 
 Errupt allows you to keep a log of errors, along with screenshots and additional details such as the technologies you are using, including the language and framework version numbers. These small details can make a big difference. Perhaps, the way you solve an error in Ruby on Rails 4 is not the same as how you would solve it in Rails 3. Keeping a detailed error log helps you and other developers approach a problem with more knowledge while reducing the chance of having to do the same work twice.
 
-Features:
+#### Features:
 
 * Log errors as they occur
 * Log multiple solutions, including ones that didn't work
@@ -33,8 +33,10 @@ gem 'foundation-rails', '5.3.3.0' (layout and styling)
 gem 'will_paginate', '~> 3.0' (pagination)
 ```
 
-####
+#### In the works:
 
 This app was written with a TDD approach for models and controllers. The test suite has a lot to room to grow, and I'll be adding more along the way. 
 
 Testing is done with rspec. To run the suite, bundle first and run rspec. For a detailed coverage report, uncomment lines 1-2 in the rails helper for SimpleCov. Ther are 4 tests in the errorlogs controller spec which may fail due to how user authentication is handled. This needs to be worked on. Integration tests are also needed.
+
+Additional features and bug fixes will be added, but current version should meet the most basic needs.
