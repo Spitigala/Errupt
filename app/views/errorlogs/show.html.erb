@@ -18,6 +18,7 @@
 <% @errorlog.solutions.each do |solution| %>
 	<% if solution.worked == true %>
 		<div class="row">
+			<h3 class="solution-title">Solutions</h3>
 			<div class="small-12 large-9 columns panel callout worked-solution-desc">
 				<%= simple_format(solution.description) %>
 				<%= link_to "Edit Solution", edit_errorlog_solution_path(@errorlog, solution) %>
