@@ -21,6 +21,7 @@ gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk', '1.53.0'
 gem 'foundation-rails', '5.3.3.0'
 gem 'will_paginate', '~> 3.0'
+gem 'rails_12factor'
 
 group :test, :development do 
   gem 'rspec-rails', '~> 2.14.0'
