@@ -26,7 +26,7 @@ Technologies used:
 Rails 4.1.4
 Ruby 2.0
 postgreSQL
-gem devise', '~> 3.3.0' #(user authentication)
+gem 'devise', '~> 3.3.0' #(user authentication)
 gem 'paperclip', '~> 4.2.0' #(image uploads)
 gem 'aws-sdk', '1.53.0' #(image hosting)
 gem 'foundation-rails', '5.3.3.0' #(layout and styling)
