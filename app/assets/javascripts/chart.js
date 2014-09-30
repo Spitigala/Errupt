@@ -14,7 +14,7 @@ function drawChart() {
             ]);
         }
 
-        var options = {'title':'Errorlog Breakdown',
+        var options = {'title':'Error Log Breakdown',
                           colors: ['#CF000F', '#F9BF3B', '#19B5FE', '#f3b49f', '#f6c7b6', '#D2527F', '#BE90D4'],
                          'width':397,
                          'height':300,
