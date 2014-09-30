@@ -1,6 +1,5 @@
 function drawChart() {
 
-
     if (document.getElementById("tag_chart") !== null) {
         var tagCount = document.getElementById("tag_chart").dataset.tags;
         var parsedTagCount = JSON.parse(tagCount);

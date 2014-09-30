@@ -6,6 +6,7 @@ class TagsController < ApplicationController
 
 	def create
 		@tag = Tag.new(tag_params)
+		
 		if @tag.save
 			flash[:success] = "Tag was created!"
 			redirect_to tag_path(@tag)
